@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Frequently Asked Questions | Paw Home Islamabad</title>
+
+  <!-- Bootstrap 5 CSS (CDN) -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  >
+  <!-- Paw Home Global Theme -->
+  <link rel="stylesheet" href="../css/style.css">
+  <!-- FAQ Page Styles -->
+  <link rel="stylesheet" href="../css/faq.css">
+</head>
+<body>
+  <!-- Accessible skip link for keyboard users -->
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <!-- Shared header & navbar injected by ../js/layout.js -->
+  <div id="site-header"></div>
+
+  <main id="main" tabindex="-1">
+    <!-- Hero Section -->
+    <section class="paw-hero">
+      <div class="container">
+        <span class="paw-hero-eyebrow">Help &amp; Answers</span>
+        <h1 class="paw-hero-title">Frequently asked questions</h1>
+        <p class="paw-hero-subtitle">
+          Quick answers for Islamabad, Rawalpindi, and Lahore adopters on applications,
+          adoption fees, vaccinations, and shelter visits.
+        </p>
+        <div class="paw-hero-actions">
+          <a href="../pages/adopt.html" class="btn-paw">Apply to Adopt</a>
+          <a href="../pages/how-it-works.html" class="btn-paw-outline">How It Works</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Search & Category Filter Section -->
+    <section class="paw-section-sm faq-controls-section">
+      <div class="container">
+        <div class="row g-3 align-items-end">
+          <div class="col-12 col-md-6 col-lg-5">
+            <label for="faq-search" class="paw-label">Search questions</label>
+            <input
+              type="search"
+              id="faq-search"
+              class="paw-input"
+              placeholder="Try: fee, CNIC, vaccinated, apartment, rabbit..."
+            >
+          </div>
+          <div class="col-12 col-md-6 col-lg-7">
+            <span class="paw-label">Filter by topic</span>
+            <div class="faq-category-list" role="group" aria-label="Filter FAQs by category">
+              <button type="button" class="btn-paw faq-cat-btn" data-category="All" aria-pressed="true">
+                All
+              </button>
+              <button type="button" class="btn-paw-outline faq-cat-btn" data-category="Adoption Process" aria-pressed="false">
+                Adoption Process
+              </button>
+              <button type="button" class="btn-paw-outline faq-cat-btn" data-category="Fees & Health" aria-pressed="false">
+                Fees &amp; Health
+              </button>
+              <button type="button" class="btn-paw-outline faq-cat-btn" data-category="Home & Care" aria-pressed="false">
+                Home &amp; Care
+              </button>
+              <button type="button" class="btn-paw-outline faq-cat-btn" data-category="Shelters & Visits" aria-pressed="false">
+                Shelters &amp; Visits
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Accordion FAQ List Section -->
+    <section class="paw-section">
+      <div class="container">
+        <div class="d-flex flex-column flex-sm-row justify-content-between align-items-sm-center gap-2 mb-3">
+          <p class="mb-0 fw-semibold" id="faq-results-count" aria-live="polite">
+            Showing all questions
+          </p>
+          <div class="d-flex gap-2">
+            <button type="button" class="btn-paw-outline faq-utility-btn" id="faq-expand-all">
+              Expand All
+            </button>
+            <button type="button" class="btn-paw-outline faq-utility-btn" id="faq-collapse-all">
+              Collapse All
+            </button>
+          </div>
+        </div>
+
+        <!-- FAQ Items Container (populated by js/faq.js) -->
+        <div id="faq-list" class="faq-accordion"></div>
+
+        <!-- Empty State (shown when search/filter finds no matches) -->
+        <div id="faq-empty-state" class="faq-empty-card text-center mt-3" hidden>
+          <h2 class="h4 mb-2">No matching questions found</h2>
+          <p class="mb-3">
+            Try clearing your search keyword or switching back to all FAQ topics.
+          </p>
+          <button type="button" class="btn-paw" id="faq-clear-filters">
+            Reset Search &amp; Filters
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bottom Helpful Tip & Links -->
+    <section class="paw-section-sm">
+      <div class="container">
+        <div class="faq-support-box">
+          <div class="row g-3 align-items-center">
+            <div class="col-12 col-md-8">
+              <h2 class="h4 mb-1">Still planning your adoption?</h2>
+              <p class="mb-0">
+                Review our 4-step adoption guide or browse available pets in Islamabad, Rawalpindi,
+                and Lahore.
+              </p>
+            </div>
+            <div class="col-12 col-md-4 text-md-end">
+              <a href="../pages/pets.html" class="btn-paw me-2 mb-2 mb-md-0">Browse Pets</a>
+              <a href="../pages/about.html" class="btn-paw-outline">About Us</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Shared footer injected by ../js/layout.js -->
+  <div id="site-footer"></div>
+
+  <!-- Bootstrap 5 JS Bundle (CDN) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Paw Home Shared Scripts + Page Script -->
+  <script src="../js/data.js"></script>
+  <script src="../js/storage.js"></script>
+  <script src="../js/layout.js"></script>
+  <script src="../js/faq.js"></script>
+</body>
+</html>

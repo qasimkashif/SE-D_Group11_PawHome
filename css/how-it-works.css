@@ -1,0 +1,149 @@
+/* ==========================================================================
+   Paw Home - How It Works Page Styles (css/how-it-works.css)
+   Uses theme variables from css/style.css (--orange, --navy, --cream, --teal)
+   ========================================================================== */
+
+/* Stepper button row: wraps cleanly on 360px mobile screens without overflow */
+.hiw-stepper-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+}
+
+.hiw-step-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: var(--white);
+  color: var(--navy);
+  border: 2px solid rgba(43, 45, 66, 0.18);
+  border-radius: 999px;
+  padding: 0.55rem 1rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  max-width: 100%;
+  transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+
+.hiw-step-btn:hover {
+  border-color: var(--orange);
+  color: var(--orange);
+}
+
+.hiw-step-btn:focus-visible {
+  outline: 3px solid var(--orange);
+  outline-offset: 2px;
+}
+
+/* Number circle inside each step button */
+.hiw-step-badge {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background-color: var(--gray);
+  color: var(--navy);
+  font-size: 0.82rem;
+  font-weight: 800;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* Active step styling */
+.hiw-step-btn.is-active {
+  background-color: var(--orange);
+  border-color: var(--orange);
+  color: var(--white);
+}
+
+.hiw-step-btn.is-active .hiw-step-badge {
+  background-color: var(--white);
+  color: var(--orange);
+}
+
+/* Completed step styling (teal tick) */
+.hiw-step-btn.is-completed {
+  border-color: var(--teal);
+  color: var(--navy);
+}
+
+.hiw-step-btn.is-completed .hiw-step-badge {
+  background-color: var(--teal);
+  color: var(--white);
+}
+
+/* Step content panel */
+.hiw-panel {
+  border-top: 4px solid var(--orange);
+}
+
+/* Picture placeholder block inside the step panel (no external image file required) */
+.hiw-picture-box {
+  background: linear-gradient(145deg, var(--cream) 0%, #FFE8D4 100%);
+  border: 2px dashed rgba(232, 116, 59, 0.45);
+  border-radius: 0.9rem;
+  min-height: 210px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.hiw-picture-number {
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background-color: var(--orange);
+  color: var(--white);
+  font-size: 1.5rem;
+  font-weight: 800;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.85rem;
+}
+
+.hiw-picture-label {
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--navy);
+  max-width: 240px;
+}
+
+/* Previous / Next controls bar */
+.hiw-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.hiw-progress-label {
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--navy);
+}
+
+#prev-step-btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Empty Cost Estimator placeholder section */
+.hiw-estimator-placeholder {
+  background-color: var(--white);
+  border-top: 1px solid rgba(43, 45, 66, 0.08);
+}
+
+.hiw-empty-slot {
+  min-height: 80px;
+  border: 2px dashed rgba(43, 45, 66, 0.14);
+  border-radius: 1rem;
+  background-color: var(--cream);
+}

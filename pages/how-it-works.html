@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How Adoption Works | Paw Home Islamabad</title>
+
+  <!-- Bootstrap 5 CSS (CDN) -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  >
+  <!-- Paw Home Global Theme -->
+  <link rel="stylesheet" href="../css/style.css">
+  <!-- How It Works Page Styles -->
+  <link rel="stylesheet" href="../css/how-it-works.css">
+</head>
+<body>
+  <!-- Accessible skip link for keyboard users -->
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <!-- Shared header & navbar injected by ../js/layout.js -->
+  <div id="site-header"></div>
+
+  <main id="main" tabindex="-1">
+    <!-- Hero / Page Title -->
+    <section class="paw-hero">
+      <div class="container">
+        <span class="paw-hero-eyebrow">Adoption Process</span>
+        <h1 class="paw-hero-title">How adoption works</h1>
+        <p class="paw-hero-subtitle">
+          Follow our 5 clear steps from browsing pets in Islamabad to welcoming your new companion
+          home. Use the step buttons or Left/Right arrow keys to explore each stage.
+        </p>
+      </div>
+    </section>
+
+    <!-- 5-Step Interactive Stepper Section (rendered by js/how-it-works.js) -->
+    <section class="paw-section" aria-labelledby="stepper-heading">
+      <div class="container">
+        <h2 id="stepper-heading" class="visually-hidden">5-Step Adoption Guide</h2>
+
+        <!-- Step Buttons Container (populated from STEPS array in js/how-it-works.js) -->
+        <div
+          id="stepper-buttons"
+          class="hiw-stepper-nav mb-4"
+          role="group"
+          aria-label="Adoption steps"
+        ></div>
+
+        <!-- Step Content Panel (aria-live="polite" announces step changes to screen readers) -->
+        <article
+          id="step-panel"
+          class="paw-card hiw-panel"
+          aria-live="polite"
+        ></article>
+
+        <!-- Previous / Next Navigation Controls -->
+        <div class="hiw-controls mt-4">
+          <button type="button" id="prev-step-btn" class="btn-paw-outline">
+            Previous
+          </button>
+          <span id="step-progress-text" class="hiw-progress-label"></span>
+          <div id="next-step-slot"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Empty Cost Estimator Placeholder Section (to be implemented later) -->
+    <section
+      id="cost-estimator"
+      class="paw-section hiw-estimator-placeholder"
+      aria-labelledby="cost-estimator-heading"
+    >
+      <div class="container">
+        <h2 id="cost-estimator-heading" class="paw-section-title">Cost estimator</h2>
+        <div id="cost-estimator-slot" class="hiw-empty-slot">
+          <!-- Cost estimator widget placeholder for a future update -->
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Shared footer injected by ../js/layout.js -->
+  <div id="site-footer"></div>
+
+  <!-- Bootstrap 5 JS Bundle (CDN) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Paw Home Shared Scripts + Page Script -->
+  <script src="../js/data.js"></script>
+  <script src="../js/storage.js"></script>
+  <script src="../js/layout.js"></script>
+  <script src="../js/how-it-works.js"></script>
+</body>
+</html>
