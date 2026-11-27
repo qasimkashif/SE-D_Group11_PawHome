@@ -1,0 +1,632 @@
+/* ==========================================================================
+   Paw Home - Global Theme & Component Stylesheet
+   ==========================================================================
+   CLASS INVENTORY (every custom class defined in this file):
+   --------------------------------------------------------------------------
+   Accessibility & Base:
+     .skip-link
+   Buttons:
+     .btn-paw
+     .btn-paw-outline
+   Cards & Missing-Image Fallback:
+     .paw-card
+     .paw-card-body
+     .paw-card-title
+     .paw-card-meta
+     .paw-card-img-wrap
+     .paw-card-img
+     .paw-img-missing
+   Badges:
+     .paw-badge
+     .paw-badge-orange
+     .paw-badge-teal
+     .paw-badge-navy
+     .paw-badge-gray
+     .paw-fav-badge
+   Forms & Status Messages:
+     .paw-form-group
+     .paw-label
+     .paw-input
+     .paw-select
+     .paw-textarea
+     .error-text
+     .success-text
+   Navbar & Header:
+     .paw-navbar
+     .paw-brand
+     .paw-logo-circle
+     .paw-brand-text
+     .paw-toggler
+     .paw-nav-link
+     .paw-nav-active
+     .paw-dropdown-menu
+     .paw-dropdown-item
+     .paw-user-greeting
+     .paw-logout-link
+   Footer:
+     .paw-footer
+     .paw-footer-heading
+     .paw-footer-links
+     .paw-footer-link
+     .paw-footer-bottom
+   Hero & Layout Sections:
+     .paw-hero
+     .paw-hero-eyebrow
+     .paw-hero-title
+     .paw-hero-subtitle
+     .paw-hero-actions
+     .paw-section
+     .paw-section-sm
+     .paw-section-title
+     .paw-section-subtitle
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. Theme Variables (:root)
+   -------------------------------------------------------------------------- */
+:root {
+  --orange: #E8743B;
+  --orange-dark: #C95A24;
+  --navy: #2B2D42;
+  --cream: #FFF6EC;
+  --teal: #2A9D8F;
+  --red: #D62828;
+  --white: #FFFFFF;
+  --gray: #EEEEEE;
+}
+
+/* --------------------------------------------------------------------------
+   2. Base Typography & Document Defaults (Mobile-First)
+   -------------------------------------------------------------------------- */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+  background-color: var(--cream);
+  color: var(--navy);
+  line-height: 1.6;
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+a {
+  color: var(--orange);
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+a:hover {
+  color: var(--orange-dark);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--navy);
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+/* --------------------------------------------------------------------------
+   3. Accessibility: Skip Link & Visible Focus Outlines
+   -------------------------------------------------------------------------- */
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -100px;
+  z-index: 2000;
+  background-color: var(--navy);
+  color: var(--white);
+  padding: 0.65rem 1.1rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: top 0.15s ease;
+}
+
+.skip-link:focus,
+.skip-link:focus-visible {
+  top: 1rem;
+  color: var(--white);
+  outline: 3px solid var(--orange);
+  outline-offset: 2px;
+}
+
+/* High-contrast visible focus outline on every interactive element */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+summary:focus-visible,
+[tabindex]:focus-visible,
+.btn:focus-visible,
+.nav-link:focus-visible,
+.dropdown-item:focus-visible,
+.navbar-toggler:focus-visible {
+  outline: 3px solid var(--orange);
+  outline-offset: 2px;
+}
+
+/* --------------------------------------------------------------------------
+   4. Buttons (.btn-paw & .btn-paw-outline)
+   -------------------------------------------------------------------------- */
+.btn-paw {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  background-color: var(--orange);
+  color: var(--white);
+  border: 2px solid var(--orange);
+  border-radius: 999px;
+  padding: 0.65rem 1.45rem;
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 1.25;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.18s ease, border-color 0.18s ease, transform 0.12s ease, box-shadow 0.18s ease;
+}
+
+.btn-paw:hover,
+.btn-paw:active {
+  background-color: var(--orange-dark);
+  border-color: var(--orange-dark);
+  color: var(--white);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(232, 116, 59, 0.28);
+}
+
+.btn-paw-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  background-color: var(--white);
+  color: var(--orange);
+  border: 2px solid var(--orange);
+  border-radius: 999px;
+  padding: 0.65rem 1.45rem;
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 1.25;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.18s ease, color 0.18s ease, transform 0.12s ease;
+}
+
+.btn-paw-outline:hover,
+.btn-paw-outline:active {
+  background-color: var(--orange);
+  border-color: var(--orange);
+  color: var(--white);
+  transform: translateY(-1px);
+}
+
+/* --------------------------------------------------------------------------
+   5. Cards & Missing Image Placeholder Fallback
+   --------------------------------------------------------------------------
+   Recommended image markup inside .paw-card so missing files never show a
+   broken-image icon:
+     <div class="paw-card-img-wrap">
+       <img src="../images/pets/bruno.jpg" alt="Bruno the dog" class="paw-card-img"
+            onerror="this.onerror=null; pawLayout.handleImageError(this);">
+     </div>
+   -------------------------------------------------------------------------- */
+.paw-card {
+  background-color: var(--white);
+  border: 1px solid rgba(43, 45, 66, 0.1);
+  border-radius: 1rem;
+  box-shadow: 0 6px 20px rgba(43, 45, 66, 0.07);
+  overflow: hidden;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.paw-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 28px rgba(43, 45, 66, 0.12);
+}
+
+.paw-card-body {
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+}
+
+.paw-card-title {
+  font-size: 1.2rem;
+  margin-bottom: 0.35rem;
+  color: var(--navy);
+}
+
+.paw-card-meta {
+  font-size: 0.92rem;
+  color: rgba(43, 45, 66, 0.75);
+  margin-bottom: 0.75rem;
+}
+
+.paw-card-img-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  background-color: var(--gray);
+  overflow: hidden;
+}
+
+/* Displays a neutral gray placeholder if an image is missing */
+.paw-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  background-color: var(--gray);
+}
+
+.paw-img-missing {
+  background-color: var(--gray);
+  object-fit: contain;
+  opacity: 0;
+}
+
+/* --------------------------------------------------------------------------
+   6. Badges
+   -------------------------------------------------------------------------- */
+.paw-badge {
+  display: inline-block;
+  padding: 0.25rem 0.68rem;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  line-height: 1.3;
+  letter-spacing: 0.01em;
+}
+
+.paw-badge-orange {
+  background-color: rgba(232, 116, 59, 0.14);
+  color: var(--orange-dark);
+}
+
+.paw-badge-teal {
+  background-color: rgba(42, 157, 143, 0.14);
+  color: var(--teal);
+}
+
+.paw-badge-navy {
+  background-color: rgba(43, 45, 66, 0.1);
+  color: var(--navy);
+}
+
+.paw-badge-gray {
+  background-color: var(--gray);
+  color: var(--navy);
+}
+
+.paw-fav-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 1.35rem;
+  height: 1.35rem;
+  padding: 0 0.38rem;
+  margin-left: 0.3rem;
+  border-radius: 999px;
+  background-color: var(--orange);
+  color: var(--white);
+  font-size: 0.75rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+/* --------------------------------------------------------------------------
+   7. Forms & Status Messages (.error-text, .success-text)
+   -------------------------------------------------------------------------- */
+.paw-form-group {
+  margin-bottom: 1.15rem;
+}
+
+.paw-label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+  color: var(--navy);
+}
+
+.paw-input,
+.paw-select,
+.paw-textarea {
+  width: 100%;
+  background-color: var(--white);
+  color: var(--navy);
+  border: 1.5px solid rgba(43, 45, 66, 0.22);
+  border-radius: 0.65rem;
+  padding: 0.6rem 0.85rem;
+  font-size: 1rem;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.paw-input:focus,
+.paw-select:focus,
+.paw-textarea:focus {
+  border-color: var(--orange);
+  box-shadow: 0 0 0 0.2rem rgba(232, 116, 59, 0.2);
+  outline: none;
+}
+
+.paw-textarea {
+  min-height: 110px;
+  resize: vertical;
+}
+
+.error-text {
+  color: var(--red);
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.success-text {
+  color: var(--teal);
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+/* --------------------------------------------------------------------------
+   8. Sticky Navbar & Header
+   -------------------------------------------------------------------------- */
+.paw-navbar {
+  background-color: var(--cream);
+  border-bottom: 1px solid rgba(43, 45, 66, 0.1);
+  padding-top: 0.7rem;
+  padding-bottom: 0.7rem;
+}
+
+.paw-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  text-decoration: none;
+  padding: 0.15rem 0;
+}
+
+.paw-logo-circle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: var(--orange);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 2px 8px rgba(232, 116, 59, 0.3);
+}
+
+.paw-brand-text {
+  font-weight: 800;
+  font-size: 1.25rem;
+  color: var(--navy);
+  letter-spacing: -0.01em;
+}
+
+.paw-toggler {
+  border: 1.5px solid rgba(43, 45, 66, 0.25);
+  border-radius: 0.6rem;
+  padding: 0.4rem 0.65rem;
+}
+
+.paw-nav-link {
+  color: var(--navy);
+  font-weight: 500;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.5rem;
+  transition: color 0.15s ease, background-color 0.15s ease;
+}
+
+.paw-nav-link:hover,
+.paw-nav-link:focus {
+  color: var(--orange);
+  background-color: rgba(232, 116, 59, 0.08);
+}
+
+.paw-nav-active {
+  color: var(--orange);
+  font-weight: 700;
+  background-color: rgba(232, 116, 59, 0.12);
+}
+
+.paw-dropdown-menu {
+  background-color: var(--white);
+  border: 1px solid rgba(43, 45, 66, 0.1);
+  border-radius: 0.85rem;
+  box-shadow: 0 10px 28px rgba(43, 45, 66, 0.12);
+  padding: 0.45rem;
+}
+
+.paw-dropdown-item {
+  color: var(--navy);
+  border-radius: 0.5rem;
+  padding: 0.48rem 0.85rem;
+  font-weight: 500;
+}
+
+.paw-dropdown-item:hover,
+.paw-dropdown-item:focus {
+  background-color: var(--cream);
+  color: var(--orange);
+}
+
+.paw-dropdown-item.paw-nav-active {
+  background-color: rgba(232, 116, 59, 0.12);
+  color: var(--orange);
+  font-weight: 700;
+}
+
+.paw-user-greeting {
+  color: var(--navy);
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.paw-logout-link {
+  color: var(--orange-dark);
+  font-weight: 600;
+  font-size: 0.92rem;
+  text-decoration: underline;
+  background: none;
+  border: none;
+  padding: 0.25rem 0.4rem;
+  cursor: pointer;
+}
+
+.paw-logout-link:hover {
+  color: var(--red);
+}
+
+/* --------------------------------------------------------------------------
+   9. Footer
+   -------------------------------------------------------------------------- */
+.paw-footer {
+  background-color: var(--cream);
+  border-top: 1px solid rgba(43, 45, 66, 0.12);
+  padding: 2.75rem 0 1.75rem;
+  color: var(--navy);
+}
+
+.paw-footer-heading {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 0.85rem;
+  color: var(--navy);
+}
+
+.paw-footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.paw-footer-link {
+  display: inline-block;
+  padding: 0.2rem 0;
+  color: var(--navy);
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+.paw-footer-link:hover {
+  color: var(--orange);
+  text-decoration: underline;
+}
+
+.paw-footer-bottom {
+  border-top: 1px solid rgba(43, 45, 66, 0.1);
+  margin-top: 2rem;
+  padding-top: 1.25rem;
+  font-size: 0.9rem;
+  color: rgba(43, 45, 66, 0.8);
+}
+
+/* --------------------------------------------------------------------------
+   10. Hero & Section Spacing (Mobile-First)
+   -------------------------------------------------------------------------- */
+.paw-hero {
+  background: linear-gradient(135deg, var(--cream) 0%, #FFE8D4 100%);
+  border-bottom: 1px solid rgba(43, 45, 66, 0.08);
+  padding: 3rem 0;
+}
+
+.paw-hero-eyebrow {
+  display: inline-block;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--orange-dark);
+  margin-bottom: 0.65rem;
+}
+
+.paw-hero-title {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--navy);
+  margin-bottom: 0.85rem;
+}
+
+.paw-hero-subtitle {
+  font-size: 1.05rem;
+  color: rgba(43, 45, 66, 0.84);
+  max-width: 600px;
+  margin-bottom: 1.5rem;
+}
+
+.paw-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.paw-section {
+  padding: 2.5rem 0;
+}
+
+.paw-section-sm {
+  padding: 1.75rem 0;
+}
+
+.paw-section-title {
+  font-size: 1.55rem;
+  margin-bottom: 0.5rem;
+}
+
+.paw-section-subtitle {
+  color: rgba(43, 45, 66, 0.78);
+  margin-bottom: 1.75rem;
+}
+
+/* --------------------------------------------------------------------------
+   11. Responsive Enhancements (Tablet & Desktop)
+   -------------------------------------------------------------------------- */
+@media (min-width: 768px) {
+  .paw-hero {
+    padding: 4.5rem 0;
+  }
+
+  .paw-hero-title {
+    font-size: 2.75rem;
+  }
+
+  .paw-hero-subtitle {
+    font-size: 1.15rem;
+  }
+
+  .paw-section {
+    padding: 3.5rem 0;
+  }
+
+  .paw-section-title {
+    font-size: 1.85rem;
+  }
+}
+
+@media (min-width: 992px) {
+  .paw-hero {
+    padding: 5.25rem 0;
+  }
+
+  .paw-hero-title {
+    font-size: 3.15rem;
+  }
+
+  .paw-nav-link {
+    padding: 0.45rem 0.7rem;
+  }
+}
