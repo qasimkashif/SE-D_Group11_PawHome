@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 450" role="img" aria-label="Portrait of Mochi, a cream and ginger tabby cat">
+  <defs>
+    <linearGradient id="bg-mochi" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#FFF2E4"/>
+      <stop offset="100%" stop-color="#F7DCC2"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="450" fill="url(#bg-mochi)"/>
+  <ellipse cx="300" cy="395" rx="220" ry="60" fill="#E4C9AE"/>
+  <!-- Tail -->
+  <path d="M385 375 Q468 372 465 305 Q462 276 440 282" fill="none" stroke="#E88950" stroke-width="24" stroke-linecap="round"/>
+  <!-- Body -->
+  <ellipse cx="300" cy="335" rx="92" ry="84" fill="#F29E65"/>
+  <ellipse cx="300" cy="352" rx="54" ry="56" fill="#FFF3E5"/>
+  <!-- Ears -->
+  <polygon points="222,175 242,95 280,154" fill="#E88950"/>
+  <polygon points="378,175 358,95 320,154" fill="#E88950"/>
+  <polygon points="234,164 246,112 271,152" fill="#F9C1AC"/>
+  <polygon points="366,164 354,112 329,152" fill="#F9C1AC"/>
+  <!-- Head -->
+  <circle cx="300" cy="195" r="78" fill="#F4A56E"/>
+  <!-- Tabby Stripes -->
+  <path d="M282 126 L288 152 M300 120 L300 152 M318 126 L312 152" stroke="#C9622B" stroke-width="6" stroke-linecap="round"/>
+  <!-- Cream Muzzle -->
+  <ellipse cx="300" cy="222" rx="34" ry="24" fill="#FFF3E5"/>
+  <!-- Eyes -->
+  <ellipse cx="268" cy="188" rx="11" ry="13" fill="#2E5B47"/>
+  <ellipse cx="332" cy="188" rx="11" ry="13" fill="#2E5B47"/>
+  <ellipse cx="268" cy="189" rx="5" ry="9" fill="#1F2A24"/>
+  <ellipse cx="332" cy="189" rx="5" ry="9" fill="#1F2A24"/>
+  <circle cx="272" cy="183" r="3" fill="#FFF"/>
+  <circle cx="336" cy="183" r="3" fill="#FFF"/>
+  <!-- Nose & Mouth -->
+  <polygon points="300,214 291,204 309,204" fill="#E27A7A"/>
+  <path d="M282 222 Q300 232 300 214 Q300 232 318 222" fill="none" stroke="#2A2320" stroke-width="4" stroke-linecap="round"/>
+  <!-- Whiskers -->
+  <path d="M245 212 L195 204 M245 222 L195 228 M355 212 L405 204 M355 222 L405 228" stroke="#FFF" stroke-width="3.5" stroke-linecap="round" opacity="0.9"/>
+</svg>

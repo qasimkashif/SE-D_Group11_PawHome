@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 450" role="img" aria-label="Portrait of Luna, a playful black and white border collie puppy">
+  <defs>
+    <linearGradient id="bg-luna" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#E7F0F5"/>
+      <stop offset="100%" stop-color="#D7E8D8"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="450" fill="url(#bg-luna)"/>
+  <path d="M0 355 Q210 320 420 350 T600 340 L600 450 L0 450 Z" fill="#8BB795"/>
+  <!-- Body -->
+  <ellipse cx="300" cy="360" rx="102" ry="86" fill="#2A3033"/>
+  <path d="M258 292 Q300 310 342 292 L352 440 L248 440 Z" fill="#FFFFFF"/>
+  <!-- Floppy Ears -->
+  <path d="M222 145 Q172 135 178 212 Q204 222 232 190 Z" fill="#1F2427"/>
+  <path d="M378 145 Q428 135 422 212 Q396 222 368 190 Z" fill="#1F2427"/>
+  <!-- Head -->
+  <circle cx="300" cy="196" r="80" fill="#2A3033"/>
+  <!-- White Blaze & Muzzle -->
+  <path d="M286 122 Q300 120 314 122 L322 198 Q300 206 278 198 Z" fill="#FFFFFF"/>
+  <ellipse cx="300" cy="226" rx="44" ry="32" fill="#FFFFFF"/>
+  <!-- Eyes -->
+  <circle cx="266" cy="182" r="9.5" fill="#15191B"/>
+  <circle cx="334" cy="182" r="9.5" fill="#15191B"/>
+  <circle cx="269" cy="179" r="3" fill="#FFF"/>
+  <circle cx="337" cy="179" r="3" fill="#FFF"/>
+  <!-- Nose & Happy Mouth -->
+  <ellipse cx="300" cy="215" rx="15" ry="11" fill="#1F2427"/>
+  <path d="M284 231 Q300 246 316 231" fill="none" stroke="#1F2427" stroke-width="4.5" stroke-linecap="round"/>
+  <path d="M292 238 Q300 260 308 238 Z" fill="#EE7A7A"/>
+  <!-- Collar -->
+  <rect x="246" y="272" width="108" height="18" rx="9" fill="#D96B43"/>
+</svg>

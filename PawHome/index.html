@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Paw Home | Pet Adoption Centre — Find Your Forever Companion</title>
+  <meta
+    name="description"
+    content="Paw Home is a trusted pet adoption centre connecting rescued dogs, cats, and small pets with loving families. Browse adoptable pets, book a shelter visit, or foster today."
+  />
+  <meta name="keywords" content="Paw Home, pet adoption centre, adopt a dog, adopt a cat, animal rescue, foster pets, pet shelter" />
+
+  <!-- Open Graph / Social Sharing -->
+  <meta property="og:title" content="Paw Home — Pet Adoption Centre" />
+  <meta
+    property="og:description"
+    content="Meet vaccinated, health-checked dogs, cats, and small pets waiting for their forever homes at Paw Home."
+  />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="assets/images/hero-pets.svg" />
+
+  <!-- Inline SVG Favicon -->
+  <link
+    rel="icon"
+    type="image/svg+xml"
+    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23D96B43'/%3E%3Ccircle cx='21' cy='23' r='5' fill='%23FFFBF5'/%3E%3Ccircle cx='32' cy='18' r='5' fill='%23FFFBF5'/%3E%3Ccircle cx='43' cy='23' r='5' fill='%23FFFBF5'/%3E%3Cpath d='M32 28c-9 0-15 6.5-15 13.5 0 4.5 3.5 7.5 8 7.5 3 0 4.8-1.2 7-1.2s4 1.2 7 1.2c4.5 0 8-3 8-7.5C47 34.5 41 28 32 28z' fill='%23FFFBF5'/%3E%3C/svg%3E"
+  />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="css/styles.css" />
+
+  <!-- Structured Data for Local SEO -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "AnimalShelter",
+      "name": "Paw Home Pet Adoption Centre",
+      "description": "Compassionate pet rescue and adoption centre offering vet-checked dogs, cats, and small animals for adoption and foster care.",
+      "url": "https://pawhome.example.com",
+      "telephone": "+1-555-234-8910",
+      "email": "hello@pawhome.org",
+      "openingHours": "Tu-Su 10:00-18:00",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "420 Meadowbrook Lane",
+        "addressLocality": "Greenfield",
+        "addressRegion": "CA",
+        "postalCode": "94107",
+        "addressCountry": "US"
+      }
+    }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <!-- Announcement Bar -->
+  <div class="announcement-bar">
+    <div class="container announcement-inner">
+      <p>
+        <strong>Weekend Adoption Fair:</strong> Reduced adoption fees &amp; complimentary starter kits this Saturday &amp; Sunday, 10 AM – 6 PM.
+      </p>
+      <a href="#adopt-form" class="announcement-cta">Reserve a Visit &rarr;</a>
+    </div>
+  </div>
+
+  <!-- Header & Navigation -->
+  <header class="site-header" id="site-header">
+    <div class="container header-inner">
+      <a href="#top" class="brand" aria-label="Paw Home homepage">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="36" height="36" rx="10" fill="currentColor" />
+            <circle cx="11.5" cy="13" r="2.7" fill="#FFFBF5" />
+            <circle cx="18" cy="10" r="2.7" fill="#FFFBF5" />
+            <circle cx="24.5" cy="13" r="2.7" fill="#FFFBF5" />
+            <path
+              d="M18 16c-5 0-8.5 3.6-8.5 7.5 0 2.5 2 4.2 4.5 4.2 1.7 0 2.7-.7 4-.7s2.3.7 4 .7c2.5 0 4.5-1.7 4.5-4.2C26.5 19.6 23 16 18 16Z"
+              fill="#FFFBF5"
+            />
+          </svg>
+        </span>
+        <span class="brand-text">
+          <strong>Paw Home</strong>
+          <small>Pet Adoption Centre</small>
+        </span>
+      </a>
+
+      <nav class="main-nav" aria-label="Primary navigation">
+        <a href="#pets">Adoptable Pets</a>
+        <a href="#process">How It Works</a>
+        <a href="#services">Our Care</a>
+        <a href="#stories">Happy Tails</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact">Visit Us</a>
+      </nav>
+
+      <div class="header-actions">
+        <button
+          type="button"
+          class="favorites-pill"
+          id="header-favorites-btn"
+          aria-label="View saved favorite pets"
+          title="Filter by saved favorites"
+        >
+          <span class="heart-icon" aria-hidden="true">&hearts;</span>
+          <span>Saved</span>
+          <span class="fav-count" id="fav-count">0</span>
+        </button>
+        <a href="#adopt-form" class="btn btn-primary btn-sm">Apply / Visit</a>
+        <button
+          type="button"
+          class="menu-toggle"
+          id="menu-toggle"
+          aria-label="Open navigation menu"
+          aria-expanded="false"
+          aria-controls="mobile-menu"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div class="mobile-menu" id="mobile-menu" hidden>
+      <nav aria-label="Mobile navigation">
+        <a href="#pets">Adoptable Pets</a>
+        <a href="#process">How It Works</a>
+        <a href="#services">Our Care</a>
+        <a href="#stories">Happy Tails</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact">Visit Us</a>
+        <a href="#adopt-form" class="btn btn-primary">Book a Visit / Apply</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <!-- Hero Section -->
+    <section class="hero" id="top">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <span class="eyebrow">Trusted Local Animal Rescue &amp; Adoption</span>
+          <h1>Every paw deserves a <em>warm, loving home.</em></h1>
+          <p class="hero-lead">
+            At <strong>Paw Home</strong>, we rescue, rehabilitate, and thoughtfully match vaccinated, microchipped companions with caring families. Meet your future best friend online or visit our sunlit centre today.
+          </p>
+
+          <div class="hero-cta-group">
+            <a href="#pets" class="btn btn-primary btn-lg">Meet Adoptable Pets</a>
+            <a href="#adopt-form" class="btn btn-outline btn-lg">Book a Meet &amp; Greet</a>
+          </div>
+
+          <div class="hero-trust-row">
+            <div class="trust-stat">
+              <strong class="counter" data-target="480">480+</strong>
+              <span>Pets Rehomed</span>
+            </div>
+            <div class="trust-divider" aria-hidden="true"></div>
+            <div class="trust-stat">
+              <strong>100%</strong>
+              <span>Vet-Checked &amp; Vaccinated</span>
+            </div>
+            <div class="trust-divider" aria-hidden="true"></div>
+            <div class="trust-stat">
+              <strong>4.9 &starf;</strong>
+              <span>Adopter Rating</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-media">
+          <div class="hero-photo-frame">
+            <img
+              src="assets/images/hero-pets.svg"
+              alt="A friendly golden rescue dog and a ginger tabby cat relaxing together on a sunlit sofa at Paw Home"
+              width="720"
+              height="540"
+            />
+            <div class="floating-badge badge-top">
+              <span class="status-dot" aria-hidden="true"></span>
+              <span>Open Tue–Sun · Walk-ins Welcome</span>
+            </div>
+            <div class="floating-badge badge-bottom">
+              <div>
+                <strong>Free 30-Day Support</strong>
+                <small>Vet follow-up &amp; starter care kit included</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Adoptable Pets Showcase -->
+    <section class="section pets-section" id="pets">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <span class="eyebrow">Ready for Love</span>
+            <h2>Meet Our Adoptable Friends</h2>
+            <p class="section-subtitle">
+              Filter by species, age, or temperament to find a companion that fits your home and lifestyle.
+            </p>
+          </div>
+          <p class="results-counter" id="results-counter" aria-live="polite">Showing 6 pets</p>
+        </div>
+
+        <!-- Filter & Search Controls -->
+        <div class="filter-bar" role="region" aria-label="Pet filters">
+          <div class="filter-tabs" role="tablist" aria-label="Filter by species">
+            <button type="button" class="filter-tab active" data-species="all" role="tab" aria-selected="true">
+              All Pets
+            </button>
+            <button type="button" class="filter-tab" data-species="dog" role="tab" aria-selected="false">
+              Dogs
+            </button>
+            <button type="button" class="filter-tab" data-species="cat" role="tab" aria-selected="false">
+              Cats
+            </button>
+            <button type="button" class="filter-tab" data-species="small" role="tab" aria-selected="false">
+              Small Pets
+            </button>
+            <button type="button" class="filter-tab filter-tab-fav" id="favorites-filter-btn" data-species="favorites" role="tab" aria-selected="false">
+              &hearts; Saved
+            </button>
+          </div>
+
+          <div class="filter-inputs">
+            <label class="visually-hidden" for="age-filter">Filter by age</label>
+            <select id="age-filter" class="filter-select">
+              <option value="all">All Ages</option>
+              <option value="young">Puppy / Kitten (&lt; 1 yr)</option>
+              <option value="adult">Young Adult (1–4 yrs)</option>
+              <option value="senior">Calm Senior (5+ yrs)</option>
+            </select>
+
+            <label class="visually-hidden" for="pet-search">Search pets by name, breed, or trait</label>
+            <div class="search-box">
+              <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <circle cx="11" cy="11" r="8" />
+                <path d="m21 21-4.3-4.3" />
+              </svg>
+              <input
+                type="search"
+                id="pet-search"
+                placeholder="Search breed, name, or trait..."
+                autocomplete="off"
+              />
+            </div>
+          </div>
+        </div>
+
+        <!-- Pet Cards Grid (Populated via JS for rich interactivity) -->
+        <div class="pets-grid" id="pets-grid"></div>
+
+        <!-- Empty State -->
+        <div class="empty-state" id="empty-state" hidden>
+          <h3>No pets match those filters right now</h3>
+          <p>Try clearing your search or checking all species — new rescues arrive every week!</p>
+          <button type="button" class="btn btn-outline" id="reset-filters-btn">Reset All Filters</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4-Step Adoption Process -->
+    <section class="section process-section" id="process">
+      <div class="container">
+        <div class="section-header centered">
+          <span class="eyebrow">Simple &amp; Supportive</span>
+          <h2>How Adoption Works at Paw Home</h2>
+          <p class="section-subtitle">
+            We guide you at every step so both you and your new pet feel confident from day one.
+          </p>
+        </div>
+
+        <div class="steps-grid">
+          <article class="step-card">
+            <span class="step-num">01</span>
+            <h3>Browse &amp; Inquire</h3>
+            <p>
+              Explore profiles above, save your favorites, and submit a quick 2-minute adoption or visit request online.
+            </p>
+          </article>
+
+          <article class="step-card">
+            <span class="step-num">02</span>
+            <h3>Meet &amp; Greet</h3>
+            <p>
+              Spend unhurried time with your matched pet in our quiet playrooms with a dedicated adoption counselor.
+            </p>
+          </article>
+
+          <article class="step-card">
+            <span class="step-num">03</span>
+            <h3>Home Readiness</h3>
+            <p>
+              We review your living space, answer nutrition or training questions, and finalize vaccinations &amp; microchipping.
+            </p>
+          </article>
+
+          <article class="step-card">
+            <span class="step-num">04</span>
+            <h3>Welcome Home</h3>
+            <p>
+              Take your companion home with medical records, starter food, a 30-day check-in, and lifetime rescue support.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services & Why Choose Paw Home -->
+    <section class="section services-section" id="services">
+      <div class="container">
+        <div class="services-layout">
+          <div class="services-intro">
+            <span class="eyebrow">Why Paw Home</span>
+            <h2>More Than a Shelter — A Lifelong Partner</h2>
+            <p>
+              Whether you are adopting your very first pet or adding a playful sibling to your home, our team ensures every animal is healthy, socialized, and set up to thrive.
+            </p>
+            <div class="cta-banner-mini">
+              <strong>Not ready to adopt full-time?</strong>
+              <p>Join our 2-week Foster Care program — we supply food, bedding, and all vet care.</p>
+              <a href="#adopt-form" class="text-link" data-prefill-type="foster">Become a Foster Parent &rarr;</a>
+            </div>
+          </div>
+
+          <div class="services-grid">
+            <article class="service-card">
+              <div class="service-icon" aria-hidden="true">&#129658;</div>
+              <h3>Full Veterinary Care</h3>
+              <p>Every pet receives core vaccines, parasite prevention, spay/neuter surgery, and microchip registration.</p>
+            </article>
+
+            <article class="service-card">
+              <div class="service-icon" aria-hidden="true">&#129505;</div>
+              <h3>Temperament Matching</h3>
+              <p>Our behaviorists assess energy levels and compatibility with kids, apartments, and other pets.</p>
+            </article>
+
+            <article class="service-card">
+              <div class="service-icon" aria-hidden="true">&#127969;</div>
+              <h3>Foster-to-Adopt Trial</h3>
+              <p>Uncertain about the fit? Try a 7-day home trial with full counselor support before finalizing.</p>
+            </article>
+
+            <article class="service-card">
+              <div class="service-icon" aria-hidden="true">&#128218;</div>
+              <h3>Post-Adoption Guidance</h3>
+              <p>Complimentary training tips, partner groomer discounts, and direct helpline access anytime.</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Happy Tails / Social Proof -->
+    <section class="section stories-section" id="stories">
+      <div class="container">
+        <div class="section-header centered">
+          <span class="eyebrow">Happy Tails</span>
+          <h2>Families Who Found Joy at Paw Home</h2>
+          <p class="section-subtitle">Real stories from local adopters who welcomed a rescued friend.</p>
+        </div>
+
+        <div class="stories-grid">
+          <blockquote class="story-card">
+            <div class="stars" aria-label="5 out of 5 stars">&starf;&starf;&starf;&starf;&starf;</div>
+            <p>
+              “Paw Home listened carefully to our apartment schedule and introduced us to Mochi. Six months later, she greets us at the door every single evening. The vet records and check-ins made everything effortless.”
+            </p>
+            <footer>
+              <strong>Sarah &amp; Daniel K.</strong>
+              <span>Adopted Mochi (Ginger Tabby)</span>
+            </footer>
+          </blockquote>
+
+          <blockquote class="story-card">
+            <div class="stars" aria-label="5 out of 5 stars">&starf;&starf;&starf;&starf;&starf;</div>
+            <p>
+              “We were nervous first-time dog owners, but the counselors arranged two calm meet-and-greets with Barnaby and gave us a step-by-step first-week guide. Best decision our family ever made.”
+            </p>
+            <footer>
+              <strong>Marcus T.</strong>
+              <span>Adopted Barnaby (Golden Mix)</span>
+            </footer>
+          </blockquote>
+
+          <blockquote class="story-card">
+            <div class="stars" aria-label="5 out of 5 stars">&starf;&starf;&starf;&starf;&starf;</div>
+            <p>
+              “Cleanest, warmest adoption centre we have ever visited. Every animal looked genuinely loved. We started as foster volunteers and ended up adopting Daisy!”
+            </p>
+            <footer>
+              <strong>Priya N.</strong>
+              <span>Foster-to-Adopt Parent</span>
+            </footer>
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
+    <!-- Community Involvement Banner -->
+    <section class="section impact-band">
+      <div class="container impact-inner">
+        <div>
+          <span class="eyebrow eyebrow-light">Support Our Mission</span>
+          <h2>Want to Help Without Adopting?</h2>
+          <p>
+            Sponsor a rescue’s medical care, donate blankets and treats, or volunteer for weekend dog walks. Every hour and dollar directly saves local animals.
+          </p>
+        </div>
+        <div class="impact-actions">
+          <a href="#adopt-form" class="btn btn-light" data-prefill-type="volunteer">Volunteer With Us</a>
+          <a href="#adopt-form" class="btn btn-outline-light" data-prefill-type="sponsor">Sponsor a Pet</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Accordion -->
+    <section class="section faq-section" id="faq">
+      <div class="container faq-container">
+        <div class="section-header centered">
+          <span class="eyebrow">Good to Know</span>
+          <h2>Frequently Asked Questions</h2>
+        </div>
+
+        <div class="faq-list" id="faq-list">
+          <div class="faq-item">
+            <button type="button" class="faq-question" aria-expanded="false">
+              <span>What is included in the Paw Home adoption fee?</span>
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-answer" hidden>
+              <p>
+                Our adoption fee ($45 for small pets, $95 for cats, $150 for adult dogs, $195 for puppies) covers full veterinary wellness exams, core vaccinations, spay/neuter surgery, microchipping, flea/deworming treatment, and a starter supply bag.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button type="button" class="faq-question" aria-expanded="false">
+              <span>Can I adopt if I live in an apartment or rent my home?</span>
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-answer" hidden>
+              <p>
+                Yes! Many of our dogs, cats, and rabbits thrive in apartments. We simply ask for confirmation that your lease allows pets and help match you with an animal whose energy level fits your space.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button type="button" class="faq-question" aria-expanded="false">
+              <span>Can I bring my current dog or children to meet a pet first?</span>
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-answer" hidden>
+              <p>
+                Absolutely — in fact, we encourage family and resident-pet introductions! Let us know in the booking form below so our behavior team can set up a safe, supervised outdoor introduction.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button type="button" class="faq-question" aria-expanded="false">
+              <span>What happens if an adoption doesn’t work out?</span>
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-answer" hidden>
+              <p>
+                Paw Home stands behind every pet for life. If your circumstances ever change or the match isn’t right during the transition period, we always welcome the pet back and provide training support first whenever possible.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Adoption Application & Visit Booking Form + Contact -->
+    <section class="section contact-section" id="adopt-form">
+      <div class="container contact-grid">
+        <div class="form-card">
+          <span class="eyebrow">Start Your Journey</span>
+          <h2>Apply to Adopt or Book a Visit</h2>
+          <p class="form-intro">
+            Tell us a little about yourself and who you’d like to meet. Our team replies within 24 hours.
+          </p>
+
+          <form id="inquiry-form" novalidate>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="applicant-name">Full Name *</label>
+                <input type="text" id="applicant-name" name="name" placeholder="Alex Morgan" required />
+              </div>
+              <div class="form-group">
+                <label for="applicant-email">Email Address *</label>
+                <input type="email" id="applicant-email" name="email" placeholder="alex@example.com" required />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="applicant-phone">Phone Number *</label>
+                <input type="tel" id="applicant-phone" name="phone" placeholder="(555) 234-5678" required />
+              </div>
+              <div class="form-group">
+                <label for="inquiry-type">I would like to *</label>
+                <select id="inquiry-type" name="inquiryType" required>
+                  <option value="adopt">Apply to Adopt a Pet</option>
+                  <option value="visit">Schedule a Shelter Visit</option>
+                  <option value="foster">Apply to Foster</option>
+                  <option value="volunteer">Volunteer / Sponsor</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="pet-interest">Pet You’re Interested In</label>
+                <select id="pet-interest" name="petInterest">
+                  <option value="Open to suggestions">Open to counselor suggestions</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="housing-type">Home Environment</label>
+                <select id="housing-type" name="housing">
+                  <option value="House with yard">House with fenced yard</option>
+                  <option value="Apartment / Condo">Apartment / Condo</option>
+                  <option value="Townhouse">Townhouse</option>
+                  <option value="Other">Other</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="applicant-notes">Tell us about your household or preferred visit date</label>
+              <textarea
+                id="applicant-notes"
+                name="notes"
+                rows="4"
+                placeholder="Share any other pets, kids, work schedule, or when you’d like to stop by..."
+              ></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-lg btn-block">Send Inquiry to Paw Home</button>
+            <p class="form-error" id="form-error" role="alert" hidden></p>
+          </form>
+
+          <!-- Confirmation View -->
+          <div class="form-success" id="form-success" hidden>
+            <div class="success-badge" aria-hidden="true">&#10003;</div>
+            <h3>Thank you! Your request is with Paw Home.</h3>
+            <p id="success-summary"></p>
+            <button type="button" class="btn btn-outline" id="new-inquiry-btn">Submit Another Inquiry</button>
+          </div>
+        </div>
+
+        <!-- Centre Location, Hours & Newsletter -->
+        <aside class="contact-sidebar" id="contact">
+          <div class="info-card">
+            <h3>Visit Paw Home Centre</h3>
+            <ul class="contact-list">
+              <li>
+                <strong>Address</strong>
+                <span>420 Meadowbrook Lane, Greenfield, CA 94107</span>
+              </li>
+              <li>
+                <strong>Opening Hours</strong>
+                <span>Tue – Fri: 11:00 AM – 6:00 PM<br />Sat – Sun: 10:00 AM – 6:00 PM<br />Monday: Closed (Deep Cleaning &amp; Vet Day)</span>
+              </li>
+              <li>
+                <strong>Phone &amp; WhatsApp</strong>
+                <a href="tel:+15552348910">(555) 234-8910</a>
+              </li>
+              <li>
+                <strong>Email</strong>
+                <a href="mailto:hello@pawhome.org">hello@pawhome.org</a>
+              </li>
+            </ul>
+
+            <div class="map-box">
+              <p><strong>Free Visitor Parking</strong> right outside our courtyard garden entrance.</p>
+              <a
+                href="https://maps.google.com/?q=420+Meadowbrook+Lane+Greenfield"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn btn-outline btn-sm"
+              >
+                Open Directions in Maps &nearr;
+              </a>
+            </div>
+          </div>
+
+          <div class="newsletter-card">
+            <h3>New Arrivals Alert</h3>
+            <p>Get weekly updates when newly rescued dogs, cats, and bunnies become ready for adoption.</p>
+            <form id="newsletter-form" class="newsletter-form">
+              <label class="visually-hidden" for="newsletter-email">Email for new pet alerts</label>
+              <input type="email" id="newsletter-email" placeholder="you@example.com" required />
+              <button type="submit" class="btn btn-primary btn-sm">Subscribe</button>
+            </form>
+            <p class="newsletter-feedback" id="newsletter-feedback" aria-live="polite"></p>
+          </div>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a href="#top" class="brand brand-light">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect width="36" height="36" rx="10" fill="currentColor" />
+              <circle cx="11.5" cy="13" r="2.7" fill="#1F2A24" />
+              <circle cx="18" cy="10" r="2.7" fill="#1F2A24" />
+              <circle cx="24.5" cy="13" r="2.7" fill="#1F2A24" />
+              <path
+                d="M18 16c-5 0-8.5 3.6-8.5 7.5 0 2.5 2 4.2 4.5 4.2 1.7 0 2.7-.7 4-.7s2.3.7 4 .7c2.5 0 4.5-1.7 4.5-4.2C26.5 19.6 23 16 18 16Z"
+                fill="#1F2A24"
+              />
+            </svg>
+          </span>
+          <span class="brand-text">
+            <strong>Paw Home</strong>
+            <small>Pet Adoption Centre</small>
+          </span>
+        </a>
+        <p>
+          Helping rescued pets find safe, joyful forever homes through ethical care, transparent matching, and community support.
+        </p>
+      </div>
+
+      <div>
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="#pets">Adoptable Pets</a></li>
+          <li><a href="#process">Adoption Process</a></li>
+          <li><a href="#services">Vet &amp; Foster Care</a></li>
+          <li><a href="#stories">Happy Tails</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Get Involved</h4>
+        <ul>
+          <li><a href="#adopt-form" data-prefill-type="visit">Book a Visit</a></li>
+          <li><a href="#adopt-form" data-prefill-type="foster">Become a Foster</a></li>
+          <li><a href="#adopt-form" data-prefill-type="volunteer">Volunteer</a></li>
+          <li><a href="#faq">Adoption FAQ</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Connect</h4>
+        <ul>
+          <li><a href="mailto:hello@pawhome.org">hello@pawhome.org</a></li>
+          <li><a href="tel:+15552348910">(555) 234-8910</a></li>
+          <li><a href="#contact">Tue–Sun · 10am–6pm</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <p>&copy; <span id="current-year"></span> Paw Home Pet Adoption Centre. All rights reserved.</p>
+      <p>Every adoption saves two lives: the pet you welcome home, and the next rescue we can take in.</p>
+    </div>
+  </footer>
+
+  <!-- Pet Detail Modal -->
+  <div class="modal-backdrop" id="pet-modal" role="dialog" aria-modal="true" aria-labelledby="modal-pet-name" hidden>
+    <div class="modal-card">
+      <button type="button" class="modal-close" id="modal-close" aria-label="Close pet profile">&times;</button>
+      <div class="modal-content" id="modal-content"></div>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
