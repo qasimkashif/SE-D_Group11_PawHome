@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Update the page title before building your page -->
+  <title>Page Title | Paw Home</title>
+
+  <!-- Bootstrap 5 CSS (CDN) -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  >
+  <!-- Paw Home Global Theme (relative path from pages/) -->
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <!-- Accessible skip link for keyboard users -->
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <!-- Shared header injected by ../js/layout.js -->
+  <div id="site-header"></div>
+
+  <main id="main" tabindex="-1">
+    <!-- Replace this starter section with your page content -->
+    <section class="paw-section">
+      <div class="container">
+        <h1 class="paw-section-title">Page Heading</h1>
+        <p class="paw-section-subtitle">
+          Copy this template into pages/&lt;your-page&gt;.html to get the shared Paw Home
+          theme, header, footer, storage helpers, and pet dataset.
+        </p>
+
+        <!--
+          TIP FOR CARD IMAGES (prevents broken-image icons if a photo is missing):
+          <div class="paw-card-img-wrap">
+            <img
+              src="../images/pets/bruno.jpg"
+              alt="Bruno the German Shepherd"
+              class="paw-card-img"
+              onerror="this.onerror=null; pawLayout.handleImageError(this);"
+            >
+          </div>
+        -->
+      </div>
+    </section>
+  </main>
+
+  <!-- Shared footer injected by ../js/layout.js -->
+  <div id="site-footer"></div>
+
+  <!-- Bootstrap 5 JS Bundle (CDN) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Paw Home Shared Scripts (relative paths from pages/) -->
+  <script src="../js/data.js"></script>
+  <script src="../js/storage.js"></script>
+  <script src="../js/layout.js"></script>
+</body>
+</html>
