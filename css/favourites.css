@@ -1,0 +1,505 @@
+/*
+  css/favourites.css
+  Styles for pages/favourites.html.
+  Uses global theme variables from style.css (--orange, --navy, --cream, --teal)
+  with local fallbacks and surface/border tokens.
+*/
+
+:root {
+  /* Theme variables (with fallbacks matching style.css) */
+  --orange: #E8743B;
+  --navy: #2B2D42;
+  --cream: #FFF6EC;
+  --teal: #2A9D8F;
+
+  /* Local helper colours for cards, borders, warnings, and muted text */
+  --fav-white: #FFFFFF;
+  --fav-orange-hover: #D46129;
+  --fav-border: #DFDBD4;
+  --fav-muted: #5C6270;
+  --fav-warning-bg: #FFF3E0;
+  --fav-warning-border: #E8743B;
+  --fav-danger: #C62828;
+  --fav-danger-bg: #FDECEA;
+  --fav-shadow: rgba(43, 45, 66, 0.1);
+}
+
+/* Page layout so footer stays at bottom */
+.fav-page {
+  background-color: var(--cream);
+  color: var(--navy);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.fav-main {
+  flex: 1;
+}
+
+.fav-section {
+  padding: 2.5rem 0 3.5rem;
+}
+
+/* Header and Summary Box */
+.fav-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  margin-bottom: 1.75rem;
+}
+
+.fav-header-text {
+  max-width: 600px;
+}
+
+.fav-eyebrow {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--teal);
+  margin-bottom: 0.35rem;
+}
+
+.fav-heading {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 0.45rem;
+}
+
+.fav-subtitle {
+  color: var(--fav-muted);
+  font-size: 1rem;
+}
+
+.fav-summary-box {
+  background-color: var(--fav-white);
+  border: 1px solid var(--fav-border);
+  border-radius: 1rem;
+  padding: 1rem 1.4rem;
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  box-shadow: 0 6px 20px var(--fav-shadow);
+}
+
+.fav-summary-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.fav-summary-label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--fav-muted);
+}
+
+.fav-summary-value {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--navy);
+}
+
+.fav-summary-fee {
+  color: var(--orange);
+}
+
+.fav-summary-divider {
+  width: 1px;
+  height: 2.4rem;
+  background-color: var(--fav-border);
+}
+
+/* Sort & Compare Toolbar */
+.fav-toolbar {
+  background-color: var(--fav-white);
+  border: 1px solid var(--fav-border);
+  border-radius: 0.9rem;
+  padding: 0.9rem 1.2rem;
+  margin-bottom: 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.fav-sort-group {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.fav-sort-label {
+  font-weight: 600;
+  color: var(--navy);
+  white-space: nowrap;
+}
+
+.fav-sort-select {
+  width: auto;
+  min-width: 190px;
+  border-color: var(--fav-border);
+  color: var(--navy);
+  font-weight: 500;
+}
+
+.fav-sort-select:focus {
+  border-color: var(--navy);
+  box-shadow: none;
+}
+
+.fav-compare-group {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+}
+
+.fav-compare-count {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--fav-muted);
+}
+
+/* Buttons */
+.btn-paw-primary {
+  background-color: var(--orange);
+  border: 2px solid var(--orange);
+  color: var(--fav-white);
+  font-weight: 600;
+  padding: 0.6rem 1.35rem;
+  border-radius: 0.55rem;
+}
+
+.btn-paw-primary:hover,
+.btn-paw-primary:active {
+  background-color: var(--fav-orange-hover);
+  border-color: var(--fav-orange-hover);
+  color: var(--fav-white);
+}
+
+.btn-paw-secondary {
+  background-color: var(--fav-white);
+  border: 2px solid var(--navy);
+  color: var(--navy);
+  font-weight: 600;
+  padding: 0.5rem 1.2rem;
+  border-radius: 0.55rem;
+}
+
+.btn-paw-secondary:hover {
+  background-color: var(--navy);
+  color: var(--fav-white);
+}
+
+.btn-paw-compare {
+  background-color: var(--teal);
+  border: 2px solid var(--teal);
+  color: var(--fav-white);
+  font-weight: 600;
+  padding: 0.55rem 1.2rem;
+  border-radius: 0.55rem;
+}
+
+.btn-paw-compare:hover:not(:disabled) {
+  background-color: #21867A;
+  border-color: #21867A;
+  color: var(--fav-white);
+}
+
+.btn-paw-compare:disabled {
+  background-color: #B8C4C2;
+  border-color: #B8C4C2;
+  color: var(--fav-white);
+  opacity: 0.85;
+  cursor: not-allowed;
+}
+
+/* Warning Alert */
+.fav-warning {
+  background-color: var(--fav-warning-bg);
+  border: 1px solid var(--fav-warning-border);
+  color: var(--navy);
+  font-weight: 600;
+  border-radius: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Pet Cards */
+.fav-card {
+  background-color: var(--fav-white);
+  border: 1px solid var(--fav-border);
+  border-radius: 1rem;
+  overflow: hidden;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 6px 18px var(--fav-shadow);
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.fav-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 24px rgba(43, 45, 66, 0.14);
+}
+
+.fav-card-img-link {
+  display: block;
+  background-color: var(--cream);
+  overflow: hidden;
+}
+
+.fav-card-img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+}
+
+.fav-card-body {
+  padding: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.fav-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-bottom: 0.55rem;
+}
+
+.fav-species-badge {
+  display: inline-block;
+  background-color: rgba(42, 157, 143, 0.14);
+  color: var(--teal);
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 0.25rem 0.65rem;
+  border-radius: 999px;
+}
+
+.fav-fee-text {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--orange);
+}
+
+.fav-card-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 0.35rem;
+}
+
+.fav-card-title a {
+  color: var(--navy);
+  text-decoration: none;
+}
+
+.fav-card-title a:hover {
+  color: var(--orange);
+  text-decoration: underline;
+}
+
+.fav-card-meta {
+  color: var(--fav-muted);
+  font-size: 0.94rem;
+  margin-bottom: 0.35rem;
+}
+
+.fav-card-location {
+  color: var(--navy);
+  font-size: 0.88rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+.fav-card-actions {
+  margin-top: auto;
+  padding-top: 0.9rem;
+  border-top: 1px solid var(--fav-border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.fav-compare-check {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  margin-bottom: 0;
+}
+
+.fav-compare-check .form-check-input {
+  margin-left: 0;
+  border-color: var(--fav-border);
+  cursor: pointer;
+}
+
+.fav-compare-check .form-check-input:checked {
+  background-color: var(--teal);
+  border-color: var(--teal);
+}
+
+.fav-compare-check .form-check-label {
+  font-weight: 600;
+  font-size: 0.92rem;
+  color: var(--navy);
+  cursor: pointer;
+}
+
+.btn-fav-remove {
+  background-color: var(--fav-danger-bg);
+  border: 1px solid #F5C2C0;
+  color: var(--fav-danger);
+  font-size: 0.88rem;
+  font-weight: 600;
+  padding: 0.4rem 0.85rem;
+  border-radius: 0.5rem;
+}
+
+.btn-fav-remove:hover {
+  background-color: var(--fav-danger);
+  border-color: var(--fav-danger);
+  color: var(--fav-white);
+}
+
+/* Empty State */
+.fav-empty {
+  background-color: var(--fav-white);
+  border: 2px dashed var(--fav-border);
+  border-radius: 1.2rem;
+  padding: 3rem 1.5rem;
+  text-align: center;
+  max-width: 560px;
+  margin: 1rem auto 0;
+}
+
+.fav-empty-illustration {
+  margin-bottom: 1.25rem;
+}
+
+.fav-empty-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 0.55rem;
+}
+
+.fav-empty-text {
+  color: var(--fav-muted);
+  margin-bottom: 1.5rem;
+}
+
+/* Comparison Modal & Table */
+.fav-modal-content {
+  border: none;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+.fav-modal-header {
+  background-color: var(--navy);
+  color: var(--fav-white);
+  border-bottom: none;
+}
+
+.fav-modal-footer {
+  border-top: 1px solid var(--fav-border);
+  background-color: var(--cream);
+}
+
+.fav-compare-table th {
+  background-color: var(--cream);
+  color: var(--navy);
+  font-weight: 700;
+}
+
+.fav-compare-table thead th {
+  text-align: center;
+  vertical-align: middle;
+}
+
+.fav-compare-table thead th:first-child {
+  text-align: left;
+  width: 140px;
+}
+
+.fav-compare-thumb {
+  width: 72px;
+  height: 72px;
+  object-fit: cover;
+  border-radius: 0.65rem;
+  border: 2px solid var(--fav-border);
+  display: block;
+  margin: 0 auto 0.45rem;
+}
+
+.fav-compare-pet-link {
+  color: var(--navy);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.fav-compare-pet-link:hover {
+  color: var(--orange);
+  text-decoration: underline;
+}
+
+/* Accessible Focus Outlines */
+.fav-page a:focus-visible,
+.fav-page button:focus-visible,
+.fav-page select:focus-visible,
+.fav-page input:focus-visible {
+  outline: 3px solid var(--navy);
+  outline-offset: 2px;
+}
+
+/* Responsive Mobile Tweaks */
+@media (max-width: 575.98px) {
+  .fav-section {
+    padding: 1.5rem 0 2.5rem;
+  }
+
+  .fav-heading {
+    font-size: 1.6rem;
+  }
+
+  .fav-summary-box {
+    width: 100%;
+    justify-content: space-around;
+  }
+
+  .fav-toolbar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .fav-sort-group,
+  .fav-compare-group {
+    justify-content: space-between;
+  }
+
+  .fav-sort-select {
+    flex: 1;
+  }
+
+  .fav-compare-group {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .btn-paw-compare {
+    width: 100%;
+  }
+}

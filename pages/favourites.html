@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Saved Favourites | Paw Home Islamabad</title>
+
+  <!-- 1. Bootstrap 5 CSS (CDN) -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  >
+  <!-- 2. Paw Home Global Theme -->
+  <link rel="stylesheet" href="../css/style.css">
+  <!-- 3. Favourites Page Styles -->
+  <link rel="stylesheet" href="../css/favourites.css">
+</head>
+<body class="fav-page">
+  <!-- Accessible skip link for keyboard users -->
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <!-- Shared header and nav injected by ../js/layout.js -->
+  <div id="site-header"></div>
+
+  <main id="main" tabindex="-1" class="fav-main">
+    <section class="fav-section" aria-labelledby="fav-heading">
+      <div class="container">
+
+        <!-- Page Header & Fee Summary Box -->
+        <header class="fav-header">
+          <div class="fav-header-text">
+            <span class="fav-eyebrow">Your Adoption Shortlist</span>
+            <h1 id="fav-heading" class="fav-heading">You saved 0 pets</h1>
+            <p class="fav-subtitle mb-0">
+              Review your saved Islamabad pets, compare up to 3 side by side, or open a pet's full profile.
+            </p>
+          </div>
+
+          <aside class="fav-summary-box" id="fav-summary" aria-label="Favourites fee summary">
+            <div class="fav-summary-item">
+              <span class="fav-summary-label">Saved Pets</span>
+              <span class="fav-summary-value" id="fav-count">0</span>
+            </div>
+            <div class="fav-summary-divider" aria-hidden="true"></div>
+            <div class="fav-summary-item">
+              <span class="fav-summary-label">Total Adoption Fees</span>
+              <span class="fav-summary-value fav-summary-fee" id="fav-total-fee">Rs. 0</span>
+            </div>
+          </aside>
+        </header>
+
+        <!-- Sort & Compare Toolbar (hidden when empty) -->
+        <div class="fav-toolbar" id="fav-toolbar">
+          <div class="fav-sort-group">
+            <label for="fav-sort" class="form-label fav-sort-label mb-0">Sort by</label>
+            <select id="fav-sort" class="form-select fav-sort-select" aria-label="Sort saved pets">
+              <option value="newest" selected>Newest saved</option>
+              <option value="fee-asc">Fee low to high</option>
+              <option value="name-asc">Name A-Z</option>
+            </select>
+          </div>
+
+          <div class="fav-compare-group">
+            <span id="compare-selected-count" class="fav-compare-count">
+              0 of 3 selected for compare
+            </span>
+            <button
+              type="button"
+              id="compare-btn"
+              class="btn btn-paw-compare"
+              disabled
+            >
+              Compare selected
+            </button>
+          </div>
+        </div>
+
+        <!-- Warning Banner when user tries to select a 4th pet -->
+        <div
+          id="compare-warning"
+          class="alert fav-warning d-none"
+          role="alert"
+          aria-live="polite"
+        ></div>
+
+        <!-- Saved Pets Card Grid (populated by ../js/favourites.js) -->
+        <div id="fav-grid" class="row g-4" aria-live="polite"></div>
+
+        <!-- Empty State (shown when no pets are saved) -->
+        <div id="fav-empty" class="fav-empty d-none">
+          <!-- Simple inline SVG illustration (no external image needed) -->
+          <div class="fav-empty-illustration" aria-hidden="true">
+            <svg width="120" height="120" viewBox="0 0 120 120" fill="none">
+              <circle cx="60" cy="60" r="54" fill="#FFF6EC" stroke="#E8743B" stroke-width="3"></circle>
+              <ellipse cx="42" cy="44" rx="8" ry="11" fill="#2B2D42"></ellipse>
+              <ellipse cx="78" cy="44" rx="8" ry="11" fill="#2B2D42"></ellipse>
+              <ellipse cx="29" cy="61" rx="7" ry="9" transform="rotate(-18 29 61)" fill="#2A9D8F"></ellipse>
+              <ellipse cx="91" cy="61" rx="7" ry="9" transform="rotate(18 91 61)" fill="#2A9D8F"></ellipse>
+              <path
+                d="M60 55C48 55 39 66 39 77C39 86 46 91 53 91C57 91 59 89 60 89C61 89 63 91 67 91C74 91 81 86 81 77C81 66 72 55 60 55Z"
+                fill="#E8743B"
+              ></path>
+              <path
+                d="M60 66C57.5 62.5 52 63 52 67.5C52 71.5 60 76.5 60 76.5C60 76.5 68 71.5 68 67.5C68 63 62.5 62.5 60 66Z"
+                fill="#FFFFFF"
+              ></path>
+            </svg>
+          </div>
+          <h2 class="fav-empty-title">No saved pets yet</h2>
+          <p class="fav-empty-text">
+            You haven't added any pets to your favourites yet. Browse loving dogs, cats, and companions waiting for a home in Islamabad.
+          </p>
+          <a href="../pages/pets.html" class="btn btn-paw-primary">Browse Pets</a>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- Bootstrap 5 Side-by-Side Comparison Modal -->
+  <div
+    class="modal fade"
+    id="compare-modal"
+    tabindex="-1"
+    aria-labelledby="compare-modal-title"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+      <div class="modal-content fav-modal-content">
+        <div class="modal-header fav-modal-header">
+          <h2 class="modal-title h5 mb-0" id="compare-modal-title">Compare Selected Pets</h2>
+          <button
+            type="button"
+            class="btn-close btn-close-white"
+            data-bs-dismiss="modal"
+            aria-label="Close comparison modal"
+          ></button>
+        </div>
+        <div class="modal-body p-3 p-md-4">
+          <div class="table-responsive">
+            <table class="table table-bordered align-middle fav-compare-table mb-0">
+              <thead id="compare-table-head"></thead>
+              <tbody id="compare-table-body"></tbody>
+            </table>
+          </div>
+        </div>
+        <div class="modal-footer fav-modal-footer">
+          <button type="button" class="btn btn-paw-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Shared footer injected by ../js/layout.js -->
+  <div id="site-footer"></div>
+
+  <!-- Bootstrap 5 JS Bundle (required for the comparison modal) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Shared Paw Home Scripts + Page Script -->
+  <script src="../js/data.js"></script>
+  <script src="../js/storage.js"></script>
+  <script src="../js/layout.js"></script>
+  <script src="../js/favourites.js"></script>
+</body>
+</html>
