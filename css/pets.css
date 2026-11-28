@@ -1,0 +1,192 @@
+/* ==========================================================================
+   Paw Home - Browse Pets Page Stylesheet (css/pets.css)
+   ==========================================================================
+   Complements css/style.css using the Paw Home theme variables:
+     --cream (#FFF6EC), --navy (#2B2D42), --orange (#E8743B),
+     --teal (#2A9D8F), --red (#D62828), --gray (#EEEEEE)
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. Page Header & Top Search/Sort Toolbar
+   -------------------------------------------------------------------------- */
+.pets-page-header {
+  background: linear-gradient(135deg, var(--cream) 0%, #FFE8D4 100%);
+  border-bottom: 1px solid rgba(43, 45, 66, 0.08);
+}
+
+.pets-toolbar {
+  background-color: var(--white);
+  border: 1px solid rgba(43, 45, 66, 0.1);
+  border-radius: 1rem;
+  box-shadow: 0 6px 20px rgba(43, 45, 66, 0.06);
+  padding: 1.15rem 1.25rem;
+}
+
+.pets-mobile-filter-btn {
+  padding: 0.58rem 1.2rem;
+}
+
+/* --------------------------------------------------------------------------
+   2. Left Filter Panel
+   -------------------------------------------------------------------------- */
+.pets-filter-panel {
+  background-color: var(--white);
+  border: 1px solid rgba(43, 45, 66, 0.1);
+  border-radius: 1rem;
+  box-shadow: 0 6px 20px rgba(43, 45, 66, 0.06);
+  padding: 1.25rem;
+}
+
+.pets-filter-heading {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--navy);
+}
+
+.pets-checkbox-wrap {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding-left: 0;
+}
+
+.pets-checkbox {
+  width: 1.2rem;
+  height: 1.2rem;
+  margin-left: 0;
+  margin-top: 0;
+  border: 1.5px solid rgba(43, 45, 66, 0.35);
+  border-radius: 0.3rem;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.pets-checkbox:checked {
+  background-color: var(--orange);
+  border-color: var(--orange);
+}
+
+.pets-checkbox:focus {
+  border-color: var(--orange);
+  box-shadow: 0 0 0 0.2rem rgba(232, 116, 59, 0.2);
+}
+
+.pets-checkbox-label {
+  font-weight: 600;
+  color: var(--navy);
+  cursor: pointer;
+  user-select: none;
+}
+
+/* --------------------------------------------------------------------------
+   3. Results Count & Pet Grid Cards
+   -------------------------------------------------------------------------- */
+.pets-results-count {
+  font-size: 1.02rem;
+  font-weight: 700;
+  color: var(--navy);
+}
+
+.pet-card-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-bottom: 0.9rem;
+}
+
+.pet-card-details {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 0.85rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.28rem;
+  font-size: 0.92rem;
+}
+
+.pet-card-detail-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+  border-bottom: 1px dashed rgba(43, 45, 66, 0.12);
+  padding-bottom: 0.24rem;
+}
+
+.pet-card-detail-label {
+  color: rgba(43, 45, 66, 0.72);
+  font-weight: 500;
+}
+
+.pet-card-detail-value {
+  color: var(--navy);
+  font-weight: 600;
+  text-align: right;
+}
+
+/* --------------------------------------------------------------------------
+   4. Heart Favourite Button
+   -------------------------------------------------------------------------- */
+.pet-fav-btn {
+  position: absolute;
+  top: 0.65rem;
+  right: 0.65rem;
+  z-index: 2;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid rgba(43, 45, 66, 0.14);
+  background-color: rgba(255, 255, 255, 0.95);
+  color: var(--navy);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(43, 45, 66, 0.15);
+  transition: transform 0.15s ease, background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+
+.pet-fav-btn:hover {
+  transform: scale(1.08);
+  background-color: var(--white);
+  color: var(--red);
+}
+
+.pet-fav-btn.is-favourite {
+  color: var(--red);
+  border-color: rgba(214, 40, 40, 0.3);
+}
+
+/* --------------------------------------------------------------------------
+   5. Empty State ("No pets match your search")
+   -------------------------------------------------------------------------- */
+.pets-empty-state {
+  background-color: var(--white);
+  border: 1px solid rgba(43, 45, 66, 0.12);
+  border-radius: 1rem;
+  box-shadow: 0 6px 20px rgba(43, 45, 66, 0.06);
+  padding: 2.5rem 1.5rem;
+  text-align: center;
+}
+
+.pets-empty-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 0.5rem;
+}
+
+.pets-empty-text {
+  color: rgba(43, 45, 66, 0.78);
+  margin-bottom: 1.25rem;
+}
+
+/* --------------------------------------------------------------------------
+   6. Desktop Sticky Sidebar
+   -------------------------------------------------------------------------- */
+@media (min-width: 992px) {
+  .pets-filter-panel {
+    position: sticky;
+    top: 5.25rem;
+  }
+}

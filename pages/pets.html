@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Browse Pets | Paw Home</title>
+
+  <!-- Bootstrap 5 CSS (CDN) -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  >
+  <!-- Paw Home Global Theme & Browse Pets Styles (relative paths from pages/) -->
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/pets.css">
+</head>
+<body>
+  <!-- Accessible skip link for keyboard users -->
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <!-- Shared header injected by ../js/layout.js -->
+  <div id="site-header"></div>
+
+  <main id="main" tabindex="-1">
+    <!-- Page Intro Header -->
+    <section class="paw-section-sm pets-page-header" aria-labelledby="pets-page-title">
+      <div class="container">
+        <h1 id="pets-page-title" class="paw-section-title mb-1">Browse Adoptable Pets</h1>
+        <p class="paw-section-subtitle mb-0">
+          Find rescued dogs, cats, rabbits, and birds waiting at verified shelters in Islamabad,
+          Rawalpindi, and Lahore.
+        </p>
+      </div>
+    </section>
+
+    <!-- Browse Directory: Top Search/Sort Row + Left Filter Panel + Pet Grid -->
+    <section class="paw-section-sm pb-5" aria-label="Pet listings and filters">
+      <div class="container">
+        <!-- 1. Top Row: Search Input & Sort Dropdown (+ Mobile Filter Toggle) -->
+        <div class="pets-toolbar mb-4">
+          <div class="row g-3 align-items-end">
+            <div class="col-12 col-md-7 col-lg-8">
+              <label for="search" class="paw-label">Search pets</label>
+              <input
+                type="search"
+                id="search"
+                class="paw-input"
+                placeholder="Search by name, breed, city, or shelter..."
+                autocomplete="off"
+              >
+            </div>
+
+            <div class="col-12 col-sm-7 col-md-5 col-lg-4">
+              <label for="sort" class="paw-label">Sort by</label>
+              <select id="sort" class="paw-select">
+                <option value="newest">Newest</option>
+                <option value="age-asc">Age low to high</option>
+                <option value="fee-asc">Fee low to high</option>
+                <option value="name-asc">Name A-Z</option>
+              </select>
+            </div>
+
+            <!-- Collapsible filter panel toggle button (visible on mobile/tablet below lg) -->
+            <div class="col-12 col-sm-5 d-lg-none">
+              <button
+                type="button"
+                class="btn-paw-outline w-100 pets-mobile-filter-btn"
+                data-bs-toggle="collapse"
+                data-bs-target="#filterPanelCollapse"
+                aria-expanded="false"
+                aria-controls="filterPanelCollapse"
+              >
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon>
+                </svg>
+                <span>Filters</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. Two-Column Layout: Left Filter Sidebar + Right Pet Grid -->
+        <div class="row g-4 align-items-start">
+          <!-- Left Filter Panel (Collapsible on mobile, always open on desktop lg+) -->
+          <aside class="col-12 col-lg-3" aria-label="Filter pets">
+            <div class="collapse d-lg-block" id="filterPanelCollapse">
+              <div class="pets-filter-panel">
+                <div class="d-flex justify-content-between align-items-center mb-3 pb-2 border-bottom">
+                  <h2 class="pets-filter-heading mb-0">Filter Pets</h2>
+                </div>
+
+                <!-- Species Select -->
+                <div class="paw-form-group">
+                  <label for="filter-species" class="paw-label">Species</label>
+                  <select id="filter-species" class="paw-select">
+                    <option value="">All species</option>
+                    <option value="Dog">Dog</option>
+                    <option value="Cat">Cat</option>
+                    <option value="Rabbit">Rabbit</option>
+                    <option value="Bird">Bird</option>
+                  </select>
+                </div>
+
+                <!-- Size Select -->
+                <div class="paw-form-group">
+                  <label for="filter-size" class="paw-label">Size</label>
+                  <select id="filter-size" class="paw-select">
+                    <option value="">All sizes</option>
+                    <option value="Small">Small</option>
+                    <option value="Medium">Medium</option>
+                    <option value="Large">Large</option>
+                  </select>
+                </div>
+
+                <!-- City Select -->
+                <div class="paw-form-group">
+                  <label for="filter-city" class="paw-label">City</label>
+                  <select id="filter-city" class="paw-select">
+                    <option value="">All cities</option>
+                    <option value="Islamabad">Islamabad</option>
+                    <option value="Rawalpindi">Rawalpindi</option>
+                    <option value="Lahore">Lahore</option>
+                  </select>
+                </div>
+
+                <!-- Age Range Select -->
+                <div class="paw-form-group">
+                  <label for="filter-age" class="paw-label">Age range</label>
+                  <select id="filter-age" class="paw-select">
+                    <option value="">All ages</option>
+                    <option value="under-1">Under 1 year</option>
+                    <option value="1-2">1 - 2 years</option>
+                    <option value="2-plus">Over 2 years</option>
+                  </select>
+                </div>
+
+                <!-- Vaccinated Only Checkbox -->
+                <div class="paw-form-group">
+                  <div class="form-check pets-checkbox-wrap">
+                    <input
+                      class="form-check-input pets-checkbox"
+                      type="checkbox"
+                      id="filter-vaccinated"
+                    >
+                    <label class="form-check-label pets-checkbox-label" for="filter-vaccinated">
+                      Vaccinated only
+                    </label>
+                  </div>
+                </div>
+
+                <!-- Reset Button -->
+                <button type="button" id="reset-filters" class="btn-paw-outline w-100">
+                  Reset
+                </button>
+              </div>
+            </div>
+          </aside>
+
+          <!-- Right Results Area: Count + 3-Column Desktop / 1-Column Mobile Grid -->
+          <div class="col-12 col-lg-9">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <p id="results-count" class="pets-results-count mb-0" role="status" aria-live="polite">
+                Showing 0 pets
+              </p>
+            </div>
+
+            <!-- Pet cards are injected here with template strings by ../js/pets.js -->
+            <div id="pet-grid" class="row g-4" aria-live="polite"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Shared footer injected by ../js/layout.js -->
+  <div id="site-footer"></div>
+
+  <!-- Bootstrap 5 JS Bundle (CDN) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Paw Home Shared Scripts (relative paths from pages/) -->
+  <script src="../js/data.js"></script>
+  <script src="../js/storage.js"></script>
+  <script src="../js/layout.js"></script>
+  <!-- Browse Pets Page Script -->
+  <script src="../js/pets.js"></script>
+</body>
+</html>
