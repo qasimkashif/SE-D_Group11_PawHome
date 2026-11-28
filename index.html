@@ -3,15 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Paw Home | Pet Adoption in Islamabad</title>
+  <title>Paw Home | Pet Adoption in Islamabad, Rawalpindi &amp; Lahore</title>
 
   <!-- Bootstrap 5 CSS (CDN) -->
   <link
     href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
     rel="stylesheet"
   >
-  <!-- Paw Home Global Theme -->
+  <!-- Paw Home Global Theme & Home Page Styles -->
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/home.css">
 </head>
 <body>
   <!-- Accessible skip link for keyboard users -->
@@ -21,83 +22,344 @@
   <div id="site-header"></div>
 
   <main id="main" tabindex="-1">
-    <!-- Hero Section -->
-    <section class="paw-hero">
+    <!-- 1. Hero Section: Large photo area, headline, local cities copy, and two orange CTA buttons -->
+    <section class="paw-hero home-hero" aria-labelledby="hero-heading">
       <div class="container">
-        <span class="paw-hero-eyebrow">Islamabad Pet Adoption</span>
-        <h1 class="paw-hero-title">Find your forever friend</h1>
-        <p class="paw-hero-subtitle">
-          Meet loving dogs, cats, rabbits, and birds waiting at trusted shelters across
-          Islamabad, Rawalpindi, and Lahore.
-        </p>
-        <div class="paw-hero-actions">
-          <a href="pages/pets.html" class="btn-paw">Browse Pets</a>
-          <a href="pages/how-it-works.html" class="btn-paw-outline">How It Works</a>
+        <div class="row align-items-center g-4 g-lg-5">
+          <div class="col-12 col-lg-6">
+            <span class="paw-hero-eyebrow">Trusted Local Pet Adoption</span>
+            <h1 id="hero-heading" class="paw-hero-title">Find your forever friend</h1>
+            <p class="paw-hero-subtitle">
+              Discover healthy, rescued pets waiting at verified shelters across Islamabad,
+              Rawalpindi, and Lahore.
+            </p>
+            <div class="paw-hero-actions">
+              <a href="pages/pets.html" class="btn-paw">Browse Pets</a>
+              <a href="pages/how-it-works.html" class="btn-paw">How It Works</a>
+            </div>
+          </div>
+
+          <div class="col-12 col-lg-6">
+            <!-- Gray placeholder background displays automatically if images/hero.jpg is missing -->
+            <div class="home-hero-media">
+              <img
+                src="images/hero.jpg"
+                alt="Adopted pets relaxing happily at home"
+                class="home-hero-img"
+                onerror="this.onerror=null; this.classList.add('paw-img-missing');"
+              >
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- Theme & Component Preview Section (for testing cards, badges, and typography) -->
-    <section class="paw-section">
+    <!-- 2. Highlights Carousel: 3 slides with dots, arrows, pause on hover, keyboard support & ARIA labels -->
+    <section class="paw-section home-carousel-section" aria-label="Adoption highlights">
       <div class="container">
-        <h2 class="paw-section-title">Why adopt with Paw Home?</h2>
+        <div
+          id="homeCarousel"
+          class="carousel slide home-carousel"
+          data-bs-ride="carousel"
+          data-bs-pause="hover"
+          data-bs-keyboard="true"
+          data-bs-interval="5000"
+          role="region"
+          aria-roledescription="carousel"
+          aria-label="Paw Home highlights"
+          tabindex="0"
+        >
+          <!-- Slide indicator dots -->
+          <div class="carousel-indicators home-carousel-indicators">
+            <button
+              type="button"
+              data-bs-target="#homeCarousel"
+              data-bs-slide-to="0"
+              class="active"
+              aria-current="true"
+              aria-label="Slide 1: Verified shelters"
+            ></button>
+            <button
+              type="button"
+              data-bs-target="#homeCarousel"
+              data-bs-slide-to="1"
+              aria-label="Slide 2: Simple adoption process"
+            ></button>
+            <button
+              type="button"
+              data-bs-target="#homeCarousel"
+              data-bs-slide-to="2"
+              aria-label="Slide 3: Pet care resources"
+            ></button>
+          </div>
+
+          <!-- 3 Carousel Slides -->
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <div class="home-slide">
+                <div class="row align-items-center g-0">
+                  <div class="col-12 col-md-6">
+                    <div class="home-slide-media">
+                      <img
+                        src="images/slide-1.jpg"
+                        alt="Volunteers caring for dogs at a local Islamabad shelter"
+                        class="home-slide-img"
+                        onerror="this.onerror=null; this.classList.add('paw-img-missing');"
+                      >
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-6">
+                    <div class="home-slide-content">
+                      <span class="paw-badge paw-badge-orange mb-2">Islamabad &amp; Rawalpindi</span>
+                      <h2 class="home-slide-title">Verified Local Rescue Partners</h2>
+                      <p class="home-slide-text">
+                        Every pet profile comes directly from trusted shelters across the Twin
+                        Cities and Lahore with transparent vaccination details.
+                      </p>
+                      <a href="pages/shelters.html" class="btn-paw">Explore Shelters</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="carousel-item">
+              <div class="home-slide">
+                <div class="row align-items-center g-0">
+                  <div class="col-12 col-md-6">
+                    <div class="home-slide-media">
+                      <img
+                        src="images/slide-2.jpg"
+                        alt="Family meeting an adoptable cat during a shelter visit"
+                        class="home-slide-img"
+                        onerror="this.onerror=null; this.classList.add('paw-img-missing');"
+                      >
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-6">
+                    <div class="home-slide-content">
+                      <span class="paw-badge paw-badge-teal mb-2">Easy Process</span>
+                      <h2 class="home-slide-title">Adopt in Three Simple Steps</h2>
+                      <p class="home-slide-text">
+                        Browse pets online, submit an adoption inquiry, and visit your chosen
+                        shelter for a warm meet-and-greet.
+                      </p>
+                      <a href="pages/how-it-works.html" class="btn-paw">How It Works</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="carousel-item">
+              <div class="home-slide">
+                <div class="row align-items-center g-0">
+                  <div class="col-12 col-md-6">
+                    <div class="home-slide-media">
+                      <img
+                        src="images/slide-3.jpg"
+                        alt="Happy adopted pets playing outdoors in Lahore"
+                        class="home-slide-img"
+                        onerror="this.onerror=null; this.classList.add('paw-img-missing');"
+                      >
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-6">
+                    <div class="home-slide-content">
+                      <span class="paw-badge paw-badge-navy mb-2">Care &amp; Support</span>
+                      <h2 class="home-slide-title">Guidance for Every New Pet Parent</h2>
+                      <p class="home-slide-text">
+                        Read practical feeding checklists, seasonal care advice, and local vet
+                        recommendations tailored for Pakistan.
+                      </p>
+                      <a href="pages/care-guides.html" class="btn-paw">Read Care Guides</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Previous / Next Arrow Controls -->
+          <button
+            class="carousel-control-prev home-carousel-control"
+            type="button"
+            data-bs-target="#homeCarousel"
+            data-bs-slide="prev"
+            aria-label="Previous slide"
+          >
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button
+            class="carousel-control-next home-carousel-control"
+            type="button"
+            data-bs-target="#homeCarousel"
+            data-bs-slide="next"
+            aria-label="Next slide"
+          >
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. Meet Our Newest Friends: 4 newest pets rendered dynamically into #featured-pets by js/home.js -->
+    <section class="paw-section home-featured-section" aria-labelledby="newest-heading">
+      <div class="container">
+        <div class="d-flex flex-column flex-sm-row justify-content-between align-items-sm-end gap-2 mb-4">
+          <div>
+            <h2 id="newest-heading" class="paw-section-title">Meet our newest friends</h2>
+            <p class="paw-section-subtitle mb-0">
+              Our most recently posted companions looking for a caring home.
+            </p>
+          </div>
+          <a href="pages/pets.html" class="btn-paw home-view-all-btn">Browse All Pets</a>
+        </div>
+
+        <!-- Pet cards are injected here from PETS by js/home.js -->
+        <div id="featured-pets" class="row g-4" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <!-- 4. Adopt by Type: 4 category cards linking to pages/pets.html?species=... -->
+    <section class="paw-section home-types-section" aria-labelledby="types-heading">
+      <div class="container">
+        <h2 id="types-heading" class="paw-section-title">Adopt by type</h2>
         <p class="paw-section-subtitle">
-          Verified local shelters, clear health records, and caring adoption support.
+          Pick a pet category to filter available companions in Islamabad, Rawalpindi, and Lahore.
         </p>
+
+        <div class="row g-3 g-md-4">
+          <div class="col-6 col-lg-3">
+            <a href="pages/pets.html?species=Dog" class="paw-card home-type-card">
+              <div class="paw-card-body text-center align-items-center">
+                <span class="home-type-icon" aria-hidden="true">
+                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M10 5.172C10 3.782 8.423 2.679 6.5 3c-2.823.47-4.113 6.006-4 7 .08.703 1.725 1.722 3.656 1 1.261-.472 1.96-1.45 2.344-2.5"/>
+                    <path d="M14.267 5.172c0-1.39 1.577-2.493 3.5-2.172 2.823.47 4.113 6.006 4 7-.08.703-1.725 1.722-3.656 1-1.261-.472-1.855-1.45-2.239-2.5"/>
+                    <path d="M8 14v.5"/>
+                    <path d="M16 14v.5"/>
+                    <path d="M11.25 16.25h1.5L12 17l-.75-.75Z"/>
+                    <path d="M4.42 11.247A13.152 13.152 0 0 0 4 14.556C4 18.728 7.582 21 12 21s8-2.272 8-6.444c0-1.061-.162-2.2-.493-3.309m-9.243-6.082A8.801 8.801 0 0 1 12 5c.78 0 1.5.108 2.161.306"/>
+                  </svg>
+                </span>
+                <h3 class="paw-card-title">Dogs</h3>
+                <p class="paw-card-meta">Loyal companions &amp; playful pups</p>
+                <span class="btn-paw home-type-btn mt-auto">View Dogs</span>
+              </div>
+            </a>
+          </div>
+
+          <div class="col-6 col-lg-3">
+            <a href="pages/pets.html?species=Cat" class="paw-card home-type-card">
+              <div class="paw-card-body text-center align-items-center">
+                <span class="home-type-icon" aria-hidden="true">
+                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 5c.67 0 1.35.09 2 .26 1.78-2 5.03-2.84 6.42-2.26 1.4.58-.42 7-.42 7 .57 1.07 1 2.24 1 3.44C21 17.9 16.97 21 12 21s-9-3-9-7.56c0-1.25.5-2.4 1-3.44 0 0-1.89-6.42-.5-7 1.39-.58 4.72.23 6.5 2.23A9.04 9.04 0 0 1 12 5Z"/>
+                    <path d="M8 14v.5"/>
+                    <path d="M16 14v.5"/>
+                    <path d="M11.25 16.25h1.5L12 17l-.75-.75Z"/>
+                  </svg>
+                </span>
+                <h3 class="paw-card-title">Cats</h3>
+                <p class="paw-card-meta">Gentle kittens &amp; indoor cats</p>
+                <span class="btn-paw home-type-btn mt-auto">View Cats</span>
+              </div>
+            </a>
+          </div>
+
+          <div class="col-6 col-lg-3">
+            <a href="pages/pets.html?species=Rabbit" class="paw-card home-type-card">
+              <div class="paw-card-body text-center align-items-center">
+                <span class="home-type-icon" aria-hidden="true">
+                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M13 16a3 3 0 0 1 2.24 5"/>
+                    <path d="M18 12h.01"/>
+                    <path d="M18 21h-8a4 4 0 0 1-4-4 7 7 0 0 1 7-7h.2L9.6 6.4a1 1 0 1 1 2.8-2.8L15.8 7h.2c3.3 0 6 2.7 6 6v1a2 2 0 0 1-2 2h-1a3 3 0 0 0-3 3"/>
+                    <path d="M20 8.54V4a2 2 0 1 0-4 0v3"/>
+                    <path d="M7.612 12.524a3 3 0 1 0-1.6 4.3"/>
+                  </svg>
+                </span>
+                <h3 class="paw-card-title">Rabbits</h3>
+                <p class="paw-card-meta">Friendly bunnies for calm homes</p>
+                <span class="btn-paw home-type-btn mt-auto">View Rabbits</span>
+              </div>
+            </a>
+          </div>
+
+          <div class="col-6 col-lg-3">
+            <a href="pages/pets.html?species=Bird" class="paw-card home-type-card">
+              <div class="paw-card-body text-center align-items-center">
+                <span class="home-type-icon" aria-hidden="true">
+                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M16 7h.01"/>
+                    <path d="M3.4 18H12a8 8 0 0 0 8-8V7a4 4 0 0 0-7.28-2.3L2 20"/>
+                    <path d="m20 7 2 .5-2 .5"/>
+                    <path d="M10 18v3"/>
+                    <path d="M14 17.75V21"/>
+                    <path d="M7 18a6 6 0 0 0 3.84-10.61"/>
+                  </svg>
+                </span>
+                <h3 class="paw-card-title">Birds</h3>
+                <p class="paw-card-meta">Bright &amp; melodic feathered pals</p>
+                <span class="btn-paw home-type-btn mt-auto">View Birds</span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. Our Impact: 3 IntersectionObserver counters starting at 0 on every page load -->
+    <section id="our-impact" class="paw-section home-impact-section" aria-labelledby="impact-heading">
+      <div class="container">
+        <div class="text-center mb-4">
+          <h2 id="impact-heading" class="paw-section-title">Our impact</h2>
+          <p class="paw-section-subtitle mb-0">
+            Helping rescue animals find loving homes across Islamabad, Rawalpindi, and Lahore.
+          </p>
+        </div>
 
         <div class="row g-4">
           <div class="col-12 col-md-4">
-            <article class="paw-card">
-              <div class="paw-card-body">
-                <div class="mb-2">
-                  <span class="paw-badge paw-badge-orange">Verified Shelters</span>
-                </div>
-                <h3 class="paw-card-title">Local Islamabad Rescue Partners</h3>
-                <p class="paw-card-meta">
-                  Every listing connects directly with established shelters in Islamabad,
-                  Rawalpindi, and Lahore.
-                </p>
-                <div class="mt-auto">
-                  <a href="pages/shelters.html" class="btn-paw-outline">View Shelters</a>
-                </div>
+            <div class="paw-card home-impact-card text-center">
+              <div class="paw-card-body justify-content-center">
+                <p
+                  class="home-counter-number"
+                  data-target="120"
+                  aria-label="120 pets adopted"
+                >0</p>
+                <p class="home-counter-label mb-0">Pets Adopted</p>
               </div>
-            </article>
+            </div>
           </div>
 
           <div class="col-12 col-md-4">
-            <article class="paw-card">
-              <div class="paw-card-body">
-                <div class="mb-2">
-                  <span class="paw-badge paw-badge-teal">Health Checked</span>
-                </div>
-                <h3 class="paw-card-title">Transparent Pet Profiles</h3>
-                <p class="paw-card-meta">
-                  See vaccination status, energy levels, temperament tags, and adoption fees
-                  up front before visiting.
-                </p>
-                <div class="mt-auto">
-                  <a href="pages/pets.html" class="btn-paw-outline">Explore Profiles</a>
-                </div>
+            <div class="paw-card home-impact-card text-center">
+              <div class="paw-card-body justify-content-center">
+                <p
+                  class="home-counter-number"
+                  data-target="6"
+                  aria-label="6 partner shelters"
+                >0</p>
+                <p class="home-counter-label mb-0">Partner Shelters</p>
               </div>
-            </article>
+            </div>
           </div>
 
           <div class="col-12 col-md-4">
-            <article class="paw-card">
-              <div class="paw-card-body">
-                <div class="mb-2">
-                  <span class="paw-badge paw-badge-navy">Care Support</span>
-                </div>
-                <h3 class="paw-card-title">Guidance for First-Time Owners</h3>
-                <p class="paw-card-meta">
-                  Read practical Islamabad pet care guides, local vet tips, and step-by-step
-                  adoption checklists.
-                </p>
-                <div class="mt-auto">
-                  <a href="pages/care-guides.html" class="btn-paw-outline">Read Guides</a>
-                </div>
+            <div class="paw-card home-impact-card text-center">
+              <div class="paw-card-body justify-content-center">
+                <p
+                  class="home-counter-number"
+                  data-target="3"
+                  aria-label="3 cities"
+                >0</p>
+                <p class="home-counter-label mb-0">Cities</p>
               </div>
-            </article>
+            </div>
           </div>
         </div>
       </div>
@@ -113,5 +375,7 @@
   <script src="js/data.js"></script>
   <script src="js/storage.js"></script>
   <script src="js/layout.js"></script>
+  <!-- Home Page Script -->
+  <script src="js/home.js"></script>
 </body>
 </html>

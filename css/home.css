@@ -1,0 +1,302 @@
+/* ==========================================================================
+   Paw Home - Home Page Stylesheet (css/home.css)
+   ==========================================================================
+   Complements css/style.css using the Paw Home theme variables:
+     --cream (#FFF6EC), --navy (#2B2D42), --orange (#E8743B), --gray (#EEEEEE)
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. Hero Section
+   -------------------------------------------------------------------------- */
+.home-hero {
+  background-color: var(--cream);
+  padding: 2.5rem 0;
+}
+
+.home-hero-media {
+  position: relative;
+  width: 100%;
+  min-height: 240px;
+  aspect-ratio: 4 / 3;
+  background-color: var(--gray);
+  border-radius: 1.25rem;
+  border: 1px solid rgba(43, 45, 66, 0.1);
+  box-shadow: 0 10px 28px rgba(43, 45, 66, 0.08);
+  overflow: hidden;
+}
+
+.home-hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  background-color: var(--gray);
+}
+
+/* --------------------------------------------------------------------------
+   2. Highlights Carousel
+   -------------------------------------------------------------------------- */
+.home-carousel-section {
+  background-color: var(--cream);
+}
+
+.home-carousel {
+  background-color: var(--white);
+  border: 1px solid rgba(43, 45, 66, 0.1);
+  border-radius: 1.25rem;
+  box-shadow: 0 8px 24px rgba(43, 45, 66, 0.08);
+  overflow: hidden;
+  position: relative;
+  padding-bottom: 2.5rem;
+}
+
+.home-slide-media {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  background-color: var(--gray);
+  overflow: hidden;
+}
+
+.home-slide-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  background-color: var(--gray);
+}
+
+.home-slide-content {
+  padding: 1.5rem 1.75rem;
+  color: var(--navy);
+}
+
+.home-slide-title {
+  font-size: 1.4rem;
+  color: var(--navy);
+  margin-bottom: 0.65rem;
+}
+
+.home-slide-text {
+  color: rgba(43, 45, 66, 0.84);
+  margin-bottom: 1.25rem;
+}
+
+/* High-contrast indicators (dots) on light background */
+.home-carousel-indicators {
+  margin-bottom: 0.65rem;
+  gap: 0.35rem;
+}
+
+.home-carousel-indicators [data-bs-target] {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: rgba(43, 45, 66, 0.35);
+  border: none;
+  opacity: 1;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.home-carousel-indicators .active {
+  background-color: var(--orange);
+  transform: scale(1.15);
+}
+
+/* High-contrast prev/next arrow buttons */
+.home-carousel-control {
+  width: 44px;
+  height: 44px;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: var(--navy);
+  border-radius: 50%;
+  opacity: 0.88;
+  margin: 0 0.75rem;
+  transition: background-color 0.18s ease, opacity 0.18s ease;
+}
+
+.home-carousel-control:hover,
+.home-carousel-control:focus-visible {
+  background-color: var(--orange);
+  opacity: 1;
+}
+
+.home-carousel-control .carousel-control-prev-icon,
+.home-carousel-control .carousel-control-next-icon {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+/* --------------------------------------------------------------------------
+   3. Meet Our Newest Friends (#featured-pets)
+   -------------------------------------------------------------------------- */
+.home-featured-section {
+  background-color: var(--cream);
+}
+
+.home-pet-details {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  font-size: 0.92rem;
+  color: var(--navy);
+}
+
+.home-pet-detail-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px dashed rgba(43, 45, 66, 0.12);
+  padding-bottom: 0.25rem;
+}
+
+.home-pet-detail-label {
+  color: rgba(43, 45, 66, 0.72);
+  font-weight: 500;
+}
+
+.home-pet-detail-value {
+  color: var(--navy);
+  font-weight: 600;
+}
+
+.home-empty-state {
+  background-color: var(--white);
+  border: 1px solid rgba(43, 45, 66, 0.12);
+  border-radius: 1rem;
+  padding: 2rem 1.25rem;
+  text-align: center;
+  color: var(--navy);
+  font-weight: 600;
+  margin: 0;
+}
+
+/* --------------------------------------------------------------------------
+   4. Adopt by Type
+   -------------------------------------------------------------------------- */
+.home-types-section {
+  background-color: rgba(255, 255, 255, 0.55);
+  border-top: 1px solid rgba(43, 45, 66, 0.08);
+  border-bottom: 1px solid rgba(43, 45, 66, 0.08);
+}
+
+.home-type-card {
+  text-decoration: none;
+  color: var(--navy);
+}
+
+.home-type-card:hover .home-type-icon {
+  background-color: var(--orange);
+  color: var(--white);
+  transform: scale(1.06);
+}
+
+.home-type-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background-color: rgba(232, 116, 59, 0.14);
+  color: var(--orange-dark);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.9rem;
+  transition: background-color 0.18s ease, color 0.18s ease, transform 0.18s ease;
+}
+
+.home-type-btn {
+  padding: 0.48rem 1.05rem;
+  font-size: 0.92rem;
+}
+
+/* --------------------------------------------------------------------------
+   5. Our Impact Counters
+   -------------------------------------------------------------------------- */
+.home-impact-section {
+  background-color: var(--cream);
+}
+
+.home-impact-card {
+  border-top: 4px solid var(--orange);
+  padding: 0.75rem 0.5rem;
+}
+
+.home-counter-number {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--orange);
+  line-height: 1.1;
+  margin-bottom: 0.45rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.home-counter-label {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--navy);
+}
+
+/* --------------------------------------------------------------------------
+   6. Responsive Adjustments (Phones, Tablets & Desktops)
+   -------------------------------------------------------------------------- */
+@media (max-width: 575.98px) {
+  .home-slide-content {
+    padding: 1.25rem 1.25rem 1rem;
+  }
+
+  .home-carousel-control {
+    width: 36px;
+    height: 36px;
+    top: 32%;
+    margin: 0 0.4rem;
+  }
+
+  .home-type-card .paw-card-body {
+    padding: 1rem 0.75rem;
+  }
+
+  .home-view-all-btn {
+    align-self: flex-start;
+  }
+}
+
+@media (min-width: 768px) {
+  .home-carousel {
+    padding-bottom: 0;
+  }
+
+  .home-slide-media {
+    min-height: 300px;
+    height: 100%;
+    aspect-ratio: auto;
+  }
+
+  .home-slide-content {
+    padding: 2.25rem 4rem 2.75rem 2.25rem;
+  }
+
+  .home-slide-title {
+    font-size: 1.7rem;
+  }
+
+  .home-counter-number {
+    font-size: 3rem;
+  }
+}
+
+@media (min-width: 992px) {
+  .home-hero {
+    padding: 3.75rem 0;
+  }
+
+  .home-hero-media {
+    min-height: 340px;
+  }
+
+  .home-slide-content {
+    padding: 2.75rem 4.75rem 3rem 2.75rem;
+  }
+}

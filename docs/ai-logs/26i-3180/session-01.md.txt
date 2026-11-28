@@ -1,0 +1,75 @@
+session 1 :
+
+      ▄▀▀▄        Antigravity CLI 1.5.18
+     ▀▀▀▀▀▀       i263180@isb.nu.edu.pk (Antigravity Starter Quota)
+    ▀▀▀▀▀▀▀▀      Gemini 4 Hydrogen (High)
+   ▄▀▀    ▀▀▄     ~/OneDrive/Desktop/PawHome
+  ▄▀▀      ▀▀▄
+
+────────────────────────────────────────────────────────────
+> I am building 'Paw Home', a pet adoption website for Islamabad, using ONLY HTML5, CSS3,
+  Bootstrap 5 (CDN) and vanilla JavaScript. No other frameworks or libraries (no jQuery,
+  React, etc.). Use relative paths only. Create this structure: index.html, pages/, css/,
+  js/, images/, images/pets/.
+
+  THEME (orange): CSS variables in :root:
+  --orange:#E8743B (main buttons, links, accents), --orange-dark:#C95A24 (hover),
+  --navy:#2B2D42 (text, nav links), --cream:#FFF6EC (page background, header, footer),
+  --teal:#2A9D8F (success), --red:#D62828 (errors), --white:#FFFFFF, --gray:#EEEEEE.
+  Orange rounded buttons (.btn-paw), white cards with soft shadow and thin border, rounded
+  corners, friendly clean typography (system font stack), generous spacing.
+
+  HEADER (same on every page): cream background, sticky top. Left: orange circle logo with
+  a white paw print (inline SVG) + bold navy text 'Paw Home'. Nav links: Home, Browse Pets,
+  Adopt, Favourites, Care Guides, Shelters, Events, a 'More' dropdown (About, How It Works,
+  FAQ, Success Stories, Volunteer, Donate, Contact) and a Login link. On mobile it collapses
+  into a hamburger button (Bootstrap navbar). Highlight the current page.
+
+  FOOTER (same on every page): cream background, 3 columns (Quick links, Contact with an
+  Islamabad address/phone/email, Social links), bottom line '(c) 2026 Paw Home' and an empty
+  <p id="ai-disclosure"></p> I can fill later for AI image disclosure.
+
+  FILES:
+  1. css/style.css: variables, typography, buttons (.btn-paw, .btn-paw-outline), cards
+     (.paw-card), badges, form styles, .error-text (red), .success-text (teal), sticky
+     navbar, footer, hero section, section spacing, visible focus outlines on all
+     interactive elements, a .skip-link ('Skip to main content'), and mobile-first
+     responsive rules. Add a comment block listing every class.
+  2. js/layout.js: injects the header into <div id="site-header"> and the footer into
+     <div id="site-footer"> on every page. It must compute the correct relative path prefix
+     so it works from index.html and from pages/*.html. Links go to: index.html,
+     pages/pets.html, pages/adopt.html, pages/favourites.html, pages/care-guides.html,
+     pages/shelters.html, pages/events.html, pages/about.html, pages/how-it-works.html,
+     pages/faq.html, pages/success-stories.html, pages/volunteer.html, pages/donate.html,
+     pages/contact.html, pages/login.html. If localStorage key ph_user exists (JSON with a
+     name), show 'Hi, <name>' and a Logout link instead of Login. Also show a small badge
+     with the count of ids in localStorage key ph_favourites next to Favourites.
+  3. js/storage.js: global helper functions getItem(key, fallback), setItem(key, value),
+     removeItem(key) wrapping localStorage with JSON.parse/stringify and try/catch so
+     corrupted or blocked storage never crashes the page.
+  4. js/data.js: a global const PETS array of 12 pets. Fields: id (1-12), name, species
+     (Dog, Cat, Rabbit or Bird), breed, ageMonths, gender, size (Small, Medium or Large),
+     city (Islamabad, Rawalpindi or Lahore), shelter, fee (Rs 0 to 15000), vaccinated
+     (bool), goodWithKids (bool), energy (1 to 5), temperament (array of strings),
+     description (2 realistic sentences), image (images/pets/<name>.jpg), gallery (array
+     of 3 image paths), posted (YYYY-MM-DD, spread over the last 3 months). Use realistic
+     Pakistani shelter names and real breeds, 5 dogs, 4 cats, 2 rabbits, 1 bird.
+  5. index.html: a simple test Home page that loads Bootstrap 5 CSS/JS from CDN,
+     css/style.css, js/data.js, js/storage.js, js/layout.js, has the header and footer
+     placeholders, a skip link, <main id="main"> and a hero section ('Find your forever
+     friend' + Browse Pets button) so I can test the theme.
+  6. pages/_template.html: a blank page template with the same head, placeholders and
+     scripts (using ../ paths) that my teammates copy to start their own pages.
+
+  Add clear comments in every file so I can explain them. Make sure there are no console
+  errors and that images that are missing show a neutral gray placeholder instead of a
+  broken icon (add an onerror fallback in the card styles).
+
+○ Thought for 1m 43s (Initial verification assumes manual validation of stylesheet classes against documented comments. Data schema constraints...)
+● Ran 2 commands (Get-ChildItem -Force... · New-Item -ItemType D...)
+● Edited 6 files (style.css, storage.js, data.js, +3)
+… 2 more actions (1 edit, 1 command: 1 failed) …
+● Ran (Get-Command msedge,chrome,pwsh,powershell,cscript -ErrorAction SilentlyContinue | Format-Table Name,Source -AutoSize; Test-Path "C:\Prog...)
+● Running ($css = Get-Content -Raw "css/style.css"; $headerBlock = ($css -split "1\. Theme Variables")[0]; $definedClasses...) (ctrl+o to expand)
+
+  Verification is currently running via headless Edge; waiting for it to finish.
