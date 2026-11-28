@@ -148,19 +148,143 @@
               </div>
             </div>
 
-            <!-- Empty Placeholder Section 1: Discount Code (to be added next) -->
+            <!-- Discount / Matching Code Section -->
             <section
               id="discount-code-section"
-              class="donate-placeholder-section"
-              aria-label="Discount code"
-            ></section>
+              class="donate-card mt-4"
+              aria-labelledby="discount-code-heading"
+            >
+              <div class="d-flex align-items-center justify-content-between gap-2 mb-2">
+                <h2 id="discount-code-heading" class="donate-card-heading mb-0">Matching code</h2>
+                <span
+                  id="code-applied-badge"
+                  class="badge rounded-pill text-bg-success d-none"
+                >Code applied</span>
+              </div>
+              <label for="discount-code-input" class="form-label donate-field-label">
+                Have a matching code?
+              </label>
+              <div class="input-group donate-input-group">
+                <input
+                  type="text"
+                  class="form-control donate-amount-input"
+                  id="discount-code-input"
+                  name="discountCode"
+                  placeholder="Enter code (e.g. PAWS2026)"
+                  aria-describedby="discount-code-hint discount-code-error"
+                  aria-invalid="false"
+                  autocomplete="off"
+                >
+                <button
+                  type="button"
+                  id="apply-code-btn"
+                  class="btn donate-freq-btn"
+                >
+                  Apply
+                </button>
+              </div>
+              <p id="discount-code-hint" class="donate-hint mb-1">
+                Apply a valid matching code to double your donation's impact value.
+              </p>
+              <p
+                id="discount-code-error"
+                class="donate-error mb-0"
+                role="status"
+                aria-live="polite"
+              ></p>
+            </section>
 
-            <!-- Empty Placeholder Section 2: Donor Form (to be added next) -->
+            <!-- Donor Details Form Section -->
             <section
               id="donor-form-section"
-              class="donate-placeholder-section"
-              aria-label="Donor details form"
-            ></section>
+              class="donate-card mt-4"
+              aria-labelledby="donor-form-heading"
+            >
+              <h2 id="donor-form-heading" class="donate-card-heading">Donor details</h2>
+              <form id="donor-form" novalidate>
+                <div class="mb-3">
+                  <label for="donor-name" class="form-label donate-field-label">
+                    Full name
+                  </label>
+                  <input
+                    type="text"
+                    class="form-control donate-amount-input"
+                    id="donor-name"
+                    name="donorName"
+                    placeholder="e.g. Ayesha Khan"
+                    aria-describedby="donor-name-error"
+                    aria-invalid="false"
+                    autocomplete="name"
+                    required
+                  >
+                  <p
+                    id="donor-name-error"
+                    class="donate-error mb-0 mt-1"
+                    role="status"
+                    aria-live="polite"
+                  ></p>
+                </div>
+
+                <div class="mb-3">
+                  <label for="donor-email" class="form-label donate-field-label">
+                    Email address
+                  </label>
+                  <input
+                    type="email"
+                    class="form-control donate-amount-input"
+                    id="donor-email"
+                    name="donorEmail"
+                    placeholder="e.g. ayesha@example.com"
+                    aria-describedby="donor-email-error"
+                    aria-invalid="false"
+                    autocomplete="email"
+                    required
+                  >
+                  <p
+                    id="donor-email-error"
+                    class="donate-error mb-0 mt-1"
+                    role="status"
+                    aria-live="polite"
+                  ></p>
+                </div>
+
+                <div class="mb-3">
+                  <label for="payment-method" class="form-label donate-field-label">
+                    Payment method
+                  </label>
+                  <select
+                    class="form-select donate-amount-input"
+                    id="payment-method"
+                    name="paymentMethod"
+                    aria-describedby="payment-method-hint payment-method-error"
+                    aria-invalid="false"
+                    required
+                  >
+                    <option value="">Select a payment method</option>
+                    <option value="Easypaisa">Easypaisa</option>
+                    <option value="JazzCash">JazzCash</option>
+                    <option value="Bank transfer">Bank transfer</option>
+                  </select>
+                  <p id="payment-method-hint" class="donate-hint mb-1">
+                    Simulated checkout only. No card numbers or real payment data are collected.
+                  </p>
+                  <p
+                    id="payment-method-error"
+                    class="donate-error mb-0"
+                    role="status"
+                    aria-live="polite"
+                  ></p>
+                </div>
+
+                <button
+                  type="submit"
+                  id="donate-submit-btn"
+                  class="btn btn-lg w-100 donate-preset-btn is-active"
+                >
+                  Donate
+                </button>
+              </form>
+            </section>
           </div>
 
           <!-- Right Column: Live Summary Card -->
@@ -171,7 +295,13 @@
               aria-labelledby="summary-heading"
               aria-live="polite"
             >
-              <h2 id="summary-heading" class="donate-summary-heading">Your donation summary</h2>
+              <div class="d-flex align-items-center justify-content-between gap-2 mb-3">
+                <h2 id="summary-heading" class="donate-summary-heading mb-0">Your donation summary</h2>
+                <span
+                  id="summary-match-badge"
+                  class="badge rounded-pill text-bg-success d-none"
+                >2x Impact</span>
+              </div>
 
               <!-- Populated when amount is valid; hidden and cleared when invalid/empty -->
               <div id="summary-content" class="donate-summary-content d-none">
@@ -183,6 +313,11 @@
                 <div class="donate-summary-row">
                   <span class="donate-summary-label">Frequency</span>
                   <span id="summary-frequency" class="donate-summary-frequency"></span>
+                </div>
+
+                <div id="summary-match-row" class="donate-summary-row d-none">
+                  <span class="donate-summary-label">Impact value (2x match)</span>
+                  <span id="summary-impact-value" class="fw-bold text-success"></span>
                 </div>
 
                 <div class="donate-summary-impact-box">
@@ -211,13 +346,73 @@
       </div>
     </section>
 
-    <!-- Empty Placeholder Section 3: Donation History (to be added next) -->
+    <!-- Donation History Section -->
     <section
       id="donation-history-section"
-      class="donate-placeholder-section"
-      aria-label="Donation history"
-    ></section>
+      class="pb-5"
+      aria-labelledby="donation-history-heading"
+    >
+      <div class="container">
+        <div class="donate-card">
+          <div class="d-flex flex-wrap align-items-center justify-content-between gap-2 mb-3">
+            <div>
+              <h2 id="donation-history-heading" class="donate-section-title mb-1">
+                Donation history
+              </h2>
+              <p class="donate-section-subtitle mb-0">
+                Your recorded contributions saved on this device.
+              </p>
+            </div>
+            <div class="donate-impact-badge mb-0">
+              Total donated: <span id="history-total-donated">Rs. 0</span>
+            </div>
+          </div>
+
+          <p id="history-empty-state" class="text-muted mb-0">
+            Your first donation will appear here
+          </p>
+          <ul id="donation-history-list" class="list-group list-group-flush d-none"></ul>
+        </div>
+      </div>
+    </section>
   </main>
+
+  <!-- Thank-You Bootstrap Modal -->
+  <div
+    class="modal fade"
+    id="thank-you-modal"
+    tabindex="-1"
+    aria-labelledby="thank-you-modal-title"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title fs-5 fw-bold" id="thank-you-modal-title">
+            Thank you for your gift!
+          </h2>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="modal-body">
+          <p id="thank-you-message" class="mb-3"></p>
+          <div class="donate-summary-impact-box">
+            <span class="donate-summary-impact-label">Estimated impact</span>
+            <p id="thank-you-impact" class="donate-summary-impact-text mb-0"></p>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn donate-freq-btn is-active" data-bs-dismiss="modal">
+            Done
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- Shared footer injected by ../js/layout.js -->
   <div id="site-footer"></div>
