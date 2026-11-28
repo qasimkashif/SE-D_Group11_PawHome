@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Donate | Paw Home Islamabad</title>
+
+  <!-- 1. Bootstrap 5 CSS (CDN) -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  >
+  <!-- 2. Paw Home Global Theme -->
+  <link rel="stylesheet" href="../css/style.css">
+  <!-- 3. Donate Page Styles -->
+  <link rel="stylesheet" href="../css/donate.css">
+</head>
+<body class="donate-page">
+  <!-- Accessible skip link for keyboard users -->
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <!-- Shared header and nav injected by ../js/layout.js -->
+  <div id="site-header"></div>
+
+  <main id="main" tabindex="-1" class="donate-main">
+    <!-- Hero Section -->
+    <section class="donate-hero" aria-labelledby="donate-heading">
+      <div class="container">
+        <span class="donate-eyebrow">Support Islamabad Rescue Shelters</span>
+        <h1 id="donate-heading" class="donate-hero-title">Help a pet find a home</h1>
+        <p class="donate-hero-subtitle mb-0">
+          Every rupee helps provide nutritious meals, medical care, and safe shelter for rescued dogs,
+          cats, rabbits, and birds across Islamabad.
+        </p>
+      </div>
+    </section>
+
+    <!-- Donation Selector & Live Summary Card -->
+    <section class="donate-builder-section" aria-labelledby="donate-builder-heading">
+      <div class="container">
+        <div class="row g-4 align-items-start">
+
+          <!-- Left Column: Frequency Toggle, Presets & Custom Amount -->
+          <div class="col-12 col-lg-7">
+            <div class="donate-card">
+              <h2 id="donate-builder-heading" class="donate-card-heading">Choose your gift</h2>
+
+              <!-- One-time / Monthly Frequency Toggle -->
+              <fieldset class="donate-fieldset mb-4">
+                <legend class="donate-field-label">Donation frequency</legend>
+                <div
+                  id="frequency-toggle"
+                  class="donate-frequency-group"
+                  role="group"
+                  aria-label="Donation frequency"
+                >
+                  <button
+                    type="button"
+                    class="btn donate-freq-btn is-active"
+                    data-frequency="one-time"
+                    aria-pressed="true"
+                  >
+                    One-time
+                  </button>
+                  <button
+                    type="button"
+                    class="btn donate-freq-btn"
+                    data-frequency="monthly"
+                    aria-pressed="false"
+                  >
+                    Monthly
+                  </button>
+                </div>
+              </fieldset>
+
+              <!-- Preset Amount Buttons (handled by one delegated click listener in js/donate.js) -->
+              <fieldset class="donate-fieldset mb-4">
+                <legend class="donate-field-label">Select a preset amount</legend>
+                <div
+                  id="preset-buttons"
+                  class="donate-preset-grid"
+                  role="group"
+                  aria-label="Preset donation amounts"
+                >
+                  <button
+                    type="button"
+                    class="btn donate-preset-btn"
+                    data-amount="500"
+                    aria-pressed="false"
+                  >
+                    Rs. 500
+                  </button>
+                  <button
+                    type="button"
+                    class="btn donate-preset-btn"
+                    data-amount="1000"
+                    aria-pressed="false"
+                  >
+                    Rs. 1,000
+                  </button>
+                  <button
+                    type="button"
+                    class="btn donate-preset-btn"
+                    data-amount="2500"
+                    aria-pressed="false"
+                  >
+                    Rs. 2,500
+                  </button>
+                  <button
+                    type="button"
+                    class="btn donate-preset-btn"
+                    data-amount="5000"
+                    aria-pressed="false"
+                  >
+                    Rs. 5,000
+                  </button>
+                </div>
+              </fieldset>
+
+              <!-- Custom Amount Input -->
+              <div class="mb-2">
+                <label for="custom-amount" class="form-label donate-field-label">
+                  Or enter a custom amount (PKR)
+                </label>
+                <div class="input-group donate-input-group">
+                  <span class="input-group-text donate-currency-prefix" id="currency-prefix">Rs.</span>
+                  <input
+                    type="text"
+                    inputmode="numeric"
+                    class="form-control donate-amount-input"
+                    id="custom-amount"
+                    name="amount"
+                    placeholder="e.g. 1500"
+                    aria-describedby="currency-prefix amount-hint amount-error"
+                    aria-invalid="false"
+                    autocomplete="off"
+                  >
+                </div>
+                <p id="amount-hint" class="donate-hint mb-1">
+                  Enter an amount between Rs. 100 and Rs. 500,000.
+                </p>
+                <p
+                  id="amount-error"
+                  class="donate-error mb-0"
+                  role="status"
+                  aria-live="polite"
+                ></p>
+              </div>
+            </div>
+
+            <!-- Empty Placeholder Section 1: Discount Code (to be added next) -->
+            <section
+              id="discount-code-section"
+              class="donate-placeholder-section"
+              aria-label="Discount code"
+            ></section>
+
+            <!-- Empty Placeholder Section 2: Donor Form (to be added next) -->
+            <section
+              id="donor-form-section"
+              class="donate-placeholder-section"
+              aria-label="Donor details form"
+            ></section>
+          </div>
+
+          <!-- Right Column: Live Summary Card -->
+          <div class="col-12 col-lg-5">
+            <aside
+              id="donation-summary-card"
+              class="donate-summary-card"
+              aria-labelledby="summary-heading"
+              aria-live="polite"
+            >
+              <h2 id="summary-heading" class="donate-summary-heading">Your donation summary</h2>
+
+              <!-- Populated when amount is valid; hidden and cleared when invalid/empty -->
+              <div id="summary-content" class="donate-summary-content d-none">
+                <div class="donate-summary-row">
+                  <span class="donate-summary-label">Amount</span>
+                  <span id="summary-amount" class="donate-summary-amount"></span>
+                </div>
+
+                <div class="donate-summary-row">
+                  <span class="donate-summary-label">Frequency</span>
+                  <span id="summary-frequency" class="donate-summary-frequency"></span>
+                </div>
+
+                <div class="donate-summary-impact-box">
+                  <span class="donate-summary-impact-label">Estimated impact</span>
+                  <p id="summary-impact" class="donate-summary-impact-text mb-0"></p>
+                </div>
+              </div>
+            </aside>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Impact Facts Section (cards rendered from IMPACT array in js/donate.js) -->
+    <section class="donate-impact-section" aria-labelledby="impact-facts-heading">
+      <div class="container">
+        <div class="donate-section-header">
+          <h2 id="impact-facts-heading" class="donate-section-title">Impact facts</h2>
+          <p class="donate-section-subtitle mb-0">
+            See how different contribution levels directly support shelter animals in Islamabad.
+          </p>
+        </div>
+
+        <div id="impact-facts-grid" class="row g-4"></div>
+      </div>
+    </section>
+
+    <!-- Empty Placeholder Section 3: Donation History (to be added next) -->
+    <section
+      id="donation-history-section"
+      class="donate-placeholder-section"
+      aria-label="Donation history"
+    ></section>
+  </main>
+
+  <!-- Shared footer injected by ../js/layout.js -->
+  <div id="site-footer"></div>
+
+  <!-- Bootstrap 5 JS Bundle (CDN) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Shared Paw Home Scripts + Page Script -->
+  <script src="../js/data.js"></script>
+  <script src="../js/storage.js"></script>
+  <script src="../js/layout.js"></script>
+  <script src="../js/donate.js"></script>
+</body>
+</html>
