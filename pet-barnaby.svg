@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 450" role="img" aria-label="Portrait of Barnaby, a friendly golden retriever mix dog">
+  <defs>
+    <linearGradient id="bg-barnaby" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#E5F1E8"/>
+      <stop offset="100%" stop-color="#CFE4D5"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="450" fill="url(#bg-barnaby)"/>
+  <circle cx="490" cy="85" r="54" fill="#FFF8E2" opacity="0.85"/>
+  <path d="M0 360 Q180 325 350 355 T600 340 L600 450 L0 450 Z" fill="#9BC4A7"/>
+  <!-- Dog Body -->
+  <ellipse cx="300" cy="360" rx="115" ry="90" fill="#DF9E4E"/>
+  <ellipse cx="300" cy="375" rx="64" ry="62" fill="#F6D195"/>
+  <!-- Ears -->
+  <ellipse cx="212" cy="200" rx="34" ry="68" transform="rotate(14 212 200)" fill="#BA782E"/>
+  <ellipse cx="388" cy="200" rx="34" ry="68" transform="rotate(-14 388 200)" fill="#BA782E"/>
+  <!-- Head -->
+  <circle cx="300" cy="195" r="84" fill="#E8AE60"/>
+  <ellipse cx="300" cy="224" rx="44" ry="34" fill="#FADDB0"/>
+  <!-- Eyes -->
+  <circle cx="268" cy="176" r="9.5" fill="#1F2A24"/>
+  <circle cx="332" cy="176" r="9.5" fill="#1F2A24"/>
+  <circle cx="271" cy="173" r="3" fill="#FFF"/>
+  <circle cx="335" cy="173" r="3" fill="#FFF"/>
+  <!-- Nose & Smile -->
+  <ellipse cx="300" cy="212" rx="17" ry="12" fill="#2A2320"/>
+  <path d="M282 231 Q300 249 318 231" fill="none" stroke="#2A2320" stroke-width="5" stroke-linecap="round"/>
+  <path d="M291 239 Q300 264 309 239 Z" fill="#E97272"/>
+  <!-- Collar -->
+  <rect x="242" y="272" width="116" height="20" rx="10" fill="#D96B43"/>
+  <circle cx="300" cy="297" r="10" fill="#F7C95C"/>
+</svg>

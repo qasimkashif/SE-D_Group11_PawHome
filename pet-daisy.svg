@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 450" role="img" aria-label="Portrait of Daisy, a tricolor beagle mix wearing a sage bandana">
+  <defs>
+    <linearGradient id="bg-daisy" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#F5EDE1"/>
+      <stop offset="100%" stop-color="#E6DAC7"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="450" fill="url(#bg-daisy)"/>
+  <path d="M0 365 Q240 330 430 360 T600 350 L600 450 L0 450 Z" fill="#B5CEB9"/>
+  <!-- Body -->
+  <ellipse cx="300" cy="355" rx="108" ry="88" fill="#FFFFFF"/>
+  <ellipse cx="242" cy="355" rx="45" ry="62" fill="#322C2A"/>
+  <!-- Long Beagle Ears -->
+  <ellipse cx="212" cy="204" rx="34" ry="72" transform="rotate(10 212 204)" fill="#9D5D34"/>
+  <ellipse cx="388" cy="204" rx="34" ry="72" transform="rotate(-10 388 204)" fill="#9D5D34"/>
+  <!-- Head -->
+  <circle cx="300" cy="192" r="78" fill="#C47D4B"/>
+  <path d="M286 116 L314 116 L318 192 L282 192 Z" fill="#FFFFFF"/>
+  <ellipse cx="300" cy="222" rx="44" ry="30" fill="#FFFFFF"/>
+  <!-- Eyes -->
+  <circle cx="268" cy="176" r="9" fill="#1F2A24"/>
+  <circle cx="332" cy="176" r="9" fill="#1F2A24"/>
+  <circle cx="271" cy="173" r="3" fill="#FFF"/>
+  <circle cx="335" cy="173" r="3" fill="#FFF"/>
+  <!-- Nose & Smile -->
+  <ellipse cx="300" cy="212" rx="15" ry="11" fill="#2A2320"/>
+  <path d="M284 228 Q300 240 316 228" fill="none" stroke="#2A2320" stroke-width="4.5" stroke-linecap="round"/>
+  <!-- Sage Bandana -->
+  <polygon points="234,268 366,268 300,342" fill="#2E5B47"/>
+  <rect x="242" y="264" width="116" height="14" rx="7" fill="#244838"/>
+</svg>

@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 450" role="img" aria-label="Portrait of Oliver, a calm grey shorthair cat">
+  <defs>
+    <linearGradient id="bg-oliver" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#F6EFE6"/>
+      <stop offset="100%" stop-color="#E7DDD0"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="450" fill="url(#bg-oliver)"/>
+  <rect x="0" y="345" width="600" height="105" fill="#C9A882"/>
+  <!-- Tail -->
+  <path d="M395 360 Q482 350 475 282" fill="none" stroke="#7E8B96" stroke-width="24" stroke-linecap="round"/>
+  <!-- Body -->
+  <ellipse cx="300" cy="325" rx="100" ry="86" fill="#8C99A4"/>
+  <ellipse cx="300" cy="342" rx="54" ry="52" fill="#AEB8C0"/>
+  <!-- Ears -->
+  <polygon points="222,180 236,105 278,155" fill="#7E8B96"/>
+  <polygon points="378,180 364,105 322,155" fill="#7E8B96"/>
+  <polygon points="234,170 242,122 268,154" fill="#C8B4B8"/>
+  <polygon points="366,170 358,122 332,154" fill="#C8B4B8"/>
+  <!-- Head -->
+  <circle cx="300" cy="198" r="82" fill="#8C99A4"/>
+  <!-- Chubby Cheeks -->
+  <ellipse cx="276" cy="224" rx="24" ry="18" fill="#A2AEB8"/>
+  <ellipse cx="324" cy="224" rx="24" ry="18" fill="#A2AEB8"/>
+  <!-- Amber Eyes -->
+  <circle cx="268" cy="188" r="12" fill="#E39D3B"/>
+  <circle cx="332" cy="188" r="12" fill="#E39D3B"/>
+  <circle cx="268" cy="188" r="6" fill="#1F2A24"/>
+  <circle cx="332" cy="188" r="6" fill="#1F2A24"/>
+  <circle cx="272" cy="184" r="3" fill="#FFF"/>
+  <circle cx="336" cy="184" r="3" fill="#FFF"/>
+  <!-- Nose -->
+  <polygon points="300,214 291,204 309,204" fill="#5D6770"/>
+  <path d="M284 222 Q300 232 300 214 Q300 232 316 222" fill="none" stroke="#363E44" stroke-width="4" stroke-linecap="round"/>
+  <!-- Whiskers -->
+  <path d="M242 214 L192 208 M242 224 L192 228 M358 214 L408 208 M358 224 L408 228" stroke="#F4F6F8" stroke-width="3" stroke-linecap="round"/>
+</svg>
